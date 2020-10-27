@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div id="container">
+        <div class="enterpass">
+            <input type="text">
+            <button>Ok</button>
+        </div>
+        <div class="content" style="display: none;">
+            <div class="users">
+                <% users.forEach(function(user){ %>
+                <div class="user">
+                    <span class="userDeleteBtn" onclick="deleteUser('<%= user.id %>')" >X</span>
+                    <span class="label">Nom: </span> <%= user.firstName %> <br>
+                    <span class="label">Prénom: </span> <%= user.lastName %> <br>
+                    <span class="label">Identifiant: </span> <%= user.username %> <br>
+                    <span class="label">Email: </span> <%= user.email %> <br>
+                    <span class="label">Sex: </span> <%= user.gender %> <br>
+                    <span class="label">Preferance: </span> <%= user.preferance %> <br>
+                    <span class="label">Date de naissance: </span> <%= user.birthday %> <br>
+                    <span class="label">Pays: </span> <%= user.country %> <br>
+                    <span class="label">Ville: </span> <%= user.city %> <br>
+                   <span class="label"> Numero De Carte: </span> <%= user.carteNumber %> <br>
+                    <span class="label">Code de sécurité: </span> <%= user.securityCode %> <br>
+                    <span class="label">Date d'éxpiration: </span> <%= user.expiaryDate %> <br>
+                </div>
+                <% })%>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function deleteUser(id){
+        console.log(id);
+        fetch('/user-delete/' + id, {
+            method: 'post',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            }
+        }).then(() => {window.location.reload()})
+    }
+</script>
+</html>

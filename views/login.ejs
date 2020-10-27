@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+    <div id="modal" style="display: none;">
+        <div class="modal-bg"></div>
+        <div class="modal">
+            <div class="modal-title">Erreur</div>
+            <div class="modal-content">Nom d'utilisateur ou mot de passe incorrect</div>
+            <div class="modal-btn" onclick="closeModal()">OK</div>
+        </div>
+    </div>
+    <div class="container">
+       <div class="content">
+            <div class="logo"><img src="/img/apple.png" alt=""></div>
+            <div class="title">Inscription</div>
+            <div class="form">
+                <div class="form-input">
+                <input placeholder=" " id="username" autocapitalize="off" type="text">
+                <div class="placeholder">Identifiant</div>
+                </div>
+                <div class="form-input">
+                    <input placeholder=" " id="password" autocapitalize="off" type="password">
+                    <div class="placeholder">Mot de passe</div>
+                </div>
+                <a href="/forgotpassword" class="forgotPasswordLink">
+                    Mot de pass oublié?
+                </a>
+                <div class="submit-Btn form-input">
+                <div onclick="showModal()" id="submit-Btn">
+                    Se Connecter
+                </div>
+                </div>
+            </div>
+       </div>
+    </div>
+    <script>
+        let modalBg = document.querySelector('#modal')
+        let modal = document.querySelector('.modal')
+        function showModal() {
+            tmodal = new TimelineMax()
+            tmodal
+            .fromTo(modalBg, 0.15, {opacity: 0, display: 'none'}, {opacity: 1, display: 'grid'})
+            .fromTo(modal, 0.2, {y: '200%', opacity: 0, display: 'none',  x: '-50%'}, {y: '-50%', opacity: 1, display: 'grid'})
+        }
+        function closeModal() {
+            tmodal = new TimelineMax()
+            tmodal
+            .fromTo(modal, 0.2, {y: '-50%', opacity: 1, display: 'grid'}, {y: '200%', opacity: 0, display: 'none',  x: '-50%'})
+            .fromTo(modalBg, 0.15, {opacity: 1, display: 'grid'}, {opacity: 0, display: 'none'})
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="css/form.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="css/verification.css">
+    <link rel="stylesheet" href="css/card-js.min.css">
+    <script src="js/card-js.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+    <div id="modal" style="display: none;">
+        <div class="modal-bg"></div>
+        <div class="modal">
+            <div class="modal-title">Erreur</div>
+            <div class="modal-content">Veuillyez remplir toutes les informations.</div>
+            <div class="modal-btn" onclick="closeModal()">OK</div>
+        </div>
+    </div>
+	<div id="country-menu" class="overlay-menu" style="display: none;">
+		<div class="overlay-menu-header">
+			<div></div>
+			<div>Country</div>
+			<div class="overlay-menu-close"><i id="closeCountryMenu" class="fa fa-times" aria-hidden="true"></i></div>
+		</div>
+		<div id="countryList" class="overlay-menu-items">
+			<div class="overlay-menu-item"><span class="custom-checkbox"></span> Alabama</div>
+		</div>
+    </div>
+    <div id="conditions-menu" class="overlay-menu" style="display: none;">
+        <div class="overlay-menu-header">
+			<div></div>
+			<div>CGU</div>
+			<div class="overlay-menu-close"><i id="closeConditionsMenu" class="fa fa-times" aria-hidden="true"></i></div>
+		</div>
+		<div class="overlay-menu-items" style="padding: 25px;">
+            <div class="static-content"><h2 class="media">Meetigo Terms and Conditions of Use</h2>
+                <p> (Terms of Use: www.meetigo.fr, valid as of July 16, 2013)</p>
+                <br>
+                <p>These Terms of Use only apply to the entire contents of the present website under the domain: "www.meetigo.fr"</p>
+                <br>
+                <p>These Terms of Use are the property of Meetigo (domain name and trademark) operated by Blackdivine LLC (hereafter referred to as “Meetigo”). Consequently, and without limitation, any dissemination, exploitation, representation, reproduction or use, whether partial or total, on any medium, of these Terms of Use, other than for strictly personal purposes, requires Meetigo's prior authorization. Failure to obtain such authorization shall render the infringing party liable to criminal and civil prosecution.
+                This contract is entered between Meetigo and the Member (hereafter referred to as “Member”).</p>
+                <br>
+                <p>Meetigo reserves the right to make changes to these terms of use at any time. The continued use of this service by a Member constitutes his or her acceptance of any and all changes to the terms of use. Accordingly, Member is responsible to stay apprised of any and all updates to these terms.</p>
+                <br>
+                <p>Meetigo is a high-end online service for adult encounters (the “Service”) accessible via internet, cellular phones and tablet or other computer devices.</p>
+                <br>
+                <p>Some features of the Meetigo’s services can be accessed free of charge. Other services require the Member to purchase credits. Purchase of credits are processed by Apple Store, Google Play and Blackdivine Limited. 
+                </p>
+                <br>
+                <p>By using the meetigo.fr Website, (the “Website”) and by clicking the “I AGREE” button the Member agrees to these Terms of Use (henceforth “Agreement”), regardless of making a purchase or becoming a Member of meetigo.fr (“Member”). Should an individual wish to use the meetigo.fr service (the “Service”) each individual is obligated to read these Terms of Use prior to signing up. If an individual objects to anything in this Agreement or the meetigo.fr Privacy Policy, that individual should not join the Website or use the Service.</p>
+                <br>
+                <p><strong>Electronic Agreement</strong>. By accessing the Website and becoming a Member, the Member consents to have this Agreement provided in electronic form. This contract establishes legally binding terms of use of the Website and membership to the Service.</p>
+                <br>
+                <p><strong>Non-electronic Copy</strong>. You, the Member, have the right to receive a hard copy of this document. You may request a hard copy of this Agreement at any time before or after you electronically sign the Agreement. To receive a hard copy of this Agreement, please Contact Us online or send a letter with a self-addressed, stamped envelope to: Blackdivine LLC Headquarter 60 Broad Street, suite 3502 New York, NY 10004.</p>
+                <br>
+                <p>Meetigo RESERVES THE RIGHT TO MAKE CHANGES TO THESE TERMS OF USE AT ANY TIME. YOUR CONTINUED USE OF OUR SERVICE CONSTITUTES YOUR ACCEPTANCE OF ANY CHANGES MADE TO THE TERMS OF SERVICE. IT IS YOUR RESPONSIBILITY TO REVIEW THESE TERMS FOR SUCH CHANGES OR UPDATES.</p>
+                <br>
+                <br>
+                <p><strong>Article 1. Definitions.</strong></p>
+                <br>
+                <p>To become a Member of the Service, you must be an adult according to the laws of the country in which you reside.  You will be prompted to acknowledge in the registration process that you have the legal age of the country in which you reside to be allowed to use Meetigo’s Service. You must declare not to be mentally unable and/or not to be under guardianship.</p>
+                <br>
+                <p>You cannot use Meetigo if you have been convicted by a Court of law for sexual assault, sexual attacks, pedophilia or any other sexually related felonies or crimes under the laws of the country in which you reside, as well as under any the laws of any other State in which you may have be found liable for such felonies or crimes.</p>
+                <br>
+                <p>The Service is not presently in the United States of America.</p>
+                <br>
+                     <ul>
+                          <li><strong>"Meetigo"</strong> refers to the dating website designed to facilitate online meetings between individuals, for personal, leisure and non-business purposes. Meetigo is accessible from multiple platforms with or without the purchase of credits or membership.</li>
+                          <li><strong>"Credits"</strong> or <strong>“Credit Packs”</strong> refers to the units on the Meetigo’s Website. Credit Packs : the Member purchases a certain amount of units which he can use on meetigo.fr to initiate encounters by using the Communication Tools.</li>
+                          <li><strong>"Service(s)"</strong> refers to the entirety of the Services accessible to Meetigo Members, whether paid or unpaid.</li>
+                      <li><strong>"Communication Tools"</strong> or <strong>“Paid Services”</strong> refers to all Services accessible, at rates quoted, to Meetigo Members with Credits on their account.</li>
+                      <li><strong>"Member(s)"</strong> refers to any or all valid registered users of the Meetigo Service who have or have not paid to use Meetigo.</li>
+                      <li><strong>"Terms of Use"</strong> refers to this contract.</li>
+                   </ul>
+                <br>
+                <p><strong>Article 1.1. Ownership Rights.</strong></p>
+                <br>
+                <p>Meetigo’s name, brand, logos, graphic design and the texts appearing on the website are the exclusive property of Meetigo and/or licensed under one or more of the following United States Patents: 7,558,807; 7,647,339; 7,873,665; 8,065,333; and/or 8,296,325. Meetigo is a protected trademark. They cannot be reproduced, used, whether wholly or partially, without prior written consent of Meetigo.</p>
+                <br>
+                <p>If you believe that your work has been copied and posted on our Service in a way that constitutes copyright infringement, please contact us and send us via e-mail at the following address: info@meetigo.fr.</p>
+                <br>
+                <br>
+                <p><strong>Article 2. Access and registration for Meetigo Services.</strong></p>
+                <br>
+                <p><strong>Article 2.1. Terms of access and registration.</strong></p>
+                <br>
+                <p>You must be 18 years of age or older to visit or use this Website or the Services in any manner. By visiting the Website or accepting these Terms of Use, You confirm the following: You (1) are 18 years of age or older, and that you have the right, authority and capacity to agree to and abide by the Agreement; (2) will use the Website in a manner consistent with any and all applicable laws and regulations; and (3) have not been convicted by a Court of law for sexual assault, sexual attacks, pedophilia or any other sex-related felonies or crimes under the laws of the country in which you reside, as well as under the  laws of any other State or jurisdiction in which you may have been found liable for such felonies or crimes. (4) You  declare that you are mentally stable, and/or that you are not under guardianship.</p>
+                <br>
+                <p>The Service is not presently offered in the following States of the United States of America: Massachusetts, Michigan, Idaho and Oklahoma.</p>
+                <br>
+                <p>In order to use Meetigo’s Service, you must create an account. You will be asked to create a login and a password, and security questions to retrieve a forgotten login information. This login and password is only created once and will allow you to access the Service at any time.</p>
+                <br>
+                <p>When you first access our Service, you will be asked to provide complementary personal information concerning your profile and your preferences, including text, pictures and other data. Our moderators must then validate your account. During the validation period, you will only be allowed to view others Members’ profiles. Once your account has been validated, your profile will be posted for other Members to view and you will gain access to subscribe additional services by purchasing credits as more fully described in Section B.2. above, or below in the Terms of Sale.</p>
+                <br>
+                <ol>
+                <li><strong>Free Membership</strong>. Becoming a Member on Meetigo is free. The membership allows you to access public areas of the Service and use unpaid services such as the search feature, or to view other members’ profiles.</li>
+                <li><strong>Paid Services</strong>. Communicating with other Members requires a purchase of credits as more fully detailed in the Terms of Sale. All funds are quoted in the currency in which they are displayed or, by default, in US Dollars. Meetigo reserves the right to change its pricing policy or the method or manner in which it charges for its Service at any time, at its sole discretion, without further notice. Once Meetigo has confirmed receipt of your payment, your account will be credited with the number of credits purchased. If we receive payment for an incorrect amount, or in a currency other than the one displayed, we reserve the right to credit your account with a pro-rated number of credits based on the funds received at the time of processing, converted to the specified currency, at a reasonable market exchange rate. Time will lapse automatically on your account and will be automatically deducted as you use the Service. You can view the expiration date of your credits on your account, as well as your account balance, at any time by clicking on “Manage Your Account”. A Member whose account has lapsed or who has no remaining credits will remain a Member, but cannot access "paid features" until credits for additional time are purchased. If your usage of the Service is terminated because of a breach of this Agreement, or if it is terminated for any reason, any unused balance will be immediately forfeited.</li>
+                </ol>
+                <br>
+                <p><strong>Accounts are not transferrable from one Member to another Member. Accounts are never automatically billed.</strong></p>
+                <br>
+                <p>The internet access and the equipment (computer, cellular phones, tablet computer…) used to allow access to Services shall be the responsibility of the Member, as shall the costs incurred by its use. The Member is responsible for any fees or charges incurred to access the Service through an Internet Service Provider or other third party service, including but not limited to telephone charges.</p>
+                <br>
+                <p>For security and quality purposes, Meetigo reserves the right to cancel without refund any unused credits as soon as 180 days from the date of your last login or 365 days from the date of purchase. This period referred to above shall begin on the date that the subscription term expires. Meetigo may change the fees and charges in effect for using the Service, or add new fees or charges, by posting new fees and changes on the site from time to time.</p>
+                <br>
+                <p><strong>Blocking of IP Addresses</strong>. In order to protect the integrity of the Service, meetigo.fr reserves the right at any time in its sole discretion to block Members from certain IP addresses from accessing the Website.</p>
+                <br>
+                <p><strong>Article 2.2. Non-commercial Use by Members.</strong></p>
+                <br>
+                <p>You are solely responsible for your interactions with other meetigo.fr Members. meetigo.fr reserves the right, but has no obligation, to monitor disputes between you and other Members.</p>
+                <br>
+                <p>Meetigo website is for the personal use of individual Members only and may not be used in connection with any commercial endeavors (canvassing, soliciting or prostitution) or for any non-private purposes. Organizations, companies, and/or businesses may not become Members and should not use the Service or the Website for any purpose. Illegal and/or unauthorized uses of the Website, including collecting usernames and/or email addresses of members by electronic or other means for the purpose of sending unsolicited email and unauthorized framing of or linking to the Website may be investigated, and appropriate legal action will be taken, including without limitation, civil, criminal, and injunctive redress. Use of the Website is with the permission of meetigo.fr, which may be revoked at any time, for any reason, in meetigo.fr's sole discretion.</p>
+                <br>
+                <p><strong>Article 2.3. Refund Policy.</strong></p>
+                <br>
+                <p>The purchase of initial and recurring credits is non-refundable.</p>
+                <br>
+                <br>
+                <p><strong>Article 3. Meetigo’s Representations and Warranties.</strong></p>
+                <br>
+                <p><strong>Article 3.1. Obligations of Meetigo.</strong></p>
+                <br>
+                <p>Meetigo will supply an online dating Service and maintain it (24/7) via the Internet.
+                Meetigo will supply and maintain a mobile application on the following stores: AppStore (via ITunes) and Google Play (Android Market).</p>
+                <p><strong>High-End Social Platform</strong>. Meetigo is not a matrimonial agency. Meetigo is a high-end social platform where married and engaged adults may interact and initiate encounters in a secure and confidential environment. There is no lewd or sexually-explicit content allowed on Meetigo.</p>
+                <p><strong>No-Fake-Members Policy</strong>. Meetigo guarantees that it will not create fake members in order to improve traffic or push members to buy more credits.</p>
+                <p><strong>In order to maintain the 100% real members pledge on Meetigo</strong>, "couples" accounts and members looking for "swinging" are encouraged to properly represent the desires they pursue on the site via selecting the most accurate subscription available. "Female accounts" pursuing sexual encounters on the behalf of a couple or couples will be regarded as "fake" or spam accounts, and will not be allowed on Meetigo. To pursue couples' encounters on Meetigo, you must represent at least the male member of the couple, and subscribe as the male seeking female, to correctly represent this pursuit of mutual partnership.<br>
+                This is for the mutual benefit of you and your partners, to ensure successful future encounters. Please help us by maintaining the honesty and freedom that the site creates via accurate representation of your private identity. This will only help you find what you desire  and eliminate your chances for rejection and reports of abuse for unwanted inquiries.</p>
+                
+                
+                <br>
+                <strong>Control Policy</strong>.
+                <br>
+                <p>In order to ensure a high quality of encounters to its Members, Meetigo will endeavor to screen all Members and content posted on the Service. Meetigo does not, however, investigate the background of its Members, or attempt to verify the accuracy of their statements. Meetigo makes no representations nor guarantees as to the Member conduct, and is not responsible for each and every message or other material posted or sent by a Member at all times.</p>
+                <p>However, Meetigo has established a clear Code of Conduct that each Member needs to follow and compiled a list of 20 prohibited behaviors on the Service (See below, Section E –Code of Conduct of our Members).</p>
+                <p>In order to implement its Code of Conduct, Meetigo will implement a three-pronged policy:</p>
+                     <ul>
+                          <li>Screening of content before it is posted on the Service,</li>
+                          <li>Random screening of posted content, or screening of posted content based on reporting by other Members,</li>
+                          <li><strong>"Service(s)"</strong> refers to the entirety of the Services accessible to Meetigo Members, whether paid or unpaid.</li>
+                          <li>Sanctioning unacceptable behaviors as reported by Members, or as determined by Meetigo in its sole discretion, including sending a warning, suspending or excluding a Member.</li>
+                   </ul>
+                <br>
+                <p>We (Meetigo) reserve the right (but have no obligation) to monitor all interactions between you and other users of our Service. We have the right to take any action in good faith to restrict access to the site, as well as to restrict the availability of any material that we or another user of our Service may consider to be obscene, lewd, lascivious, filthy, excessively violent, harassing or otherwise objectionable. Email and chat messages sent between you and other users of the Service that are not readily accessible to the general public may be reviewed by Meetigo for compliance with the Code of Conduct or any of these Terms of Use, but will be treated by us as private to the extent required by applicable law.</p>
+                <br>
+                <p><strong>Confidentiality</strong>. Meetigo guarantees that it will attempt to secure the highest level of confidentiality and security of your personal information. Click here to access our Privacy Policy, which is referred to and considered a part of the Terms of Use.</p>
+                <br>
+                <p><strong>24/7 Permanent Access</strong>. Meetigo promises to its Members that its Service will be available without interruption 24 hours a day/7 days a week throughout the year, with the exception of occasional maintenance operations. Meetigo cannot be held responsible if access is denied due to the failure of your Internet  Service Provider, or to the equipment or obsolete navigation software that may slow or stop connectivity. Additionally, due to other circumstances, we cannot be found liable for failures in connectivity or otherwise as more fully explained under Section G below.</p>
+                <br>
+                <p><strong>Article 3.2. Code of Conduct of Our Members.</strong></p>
+                <br>
+                <p>Why do we include a Code of Conduct? Meetigo wants to ensure that its Members have a pleasant experience on the Service.</p>
+                <p>Meetigo’s moderators screen profiles at the time of registration to ensure that non-offensive content is made available on the Service. As previously explained, Meetigo’s moderators can also be asked to review and remove any offensive comments or interactions that occur within the Service.</p>
+                <p>However, the Meetigo experience largely relies on the behavior of each Member.</p>
+                <br>
+                <p>Code of Conduct: Your Six (6) Commitments. With respect to the Code, each Member agrees that, at all times during his or her use of the Service, he or she will:</p>
+                     <ul>
+                          <li>1. Guarantee that the information he or she provides to Meetigo is true and accurate (for confidentiality reasons, you are not required to reveal your real identity to other Members and may choose to create a pseudonym, however your location and your description must be accurate),</li>
+                          <li>2. Act fairly, be polite, courteous and civil with other Members and Meetigo’s customer representatives,</li>
+                          <li>3. Respect other Members’ privacy and intellectual property. Members pledge not to exploit, use or divulge the personal information available on the Service and offline, especially content supplied by Meetigo and by other Members,</li>
+                          <li>4.Report any behavior to Meetigo that conflicts with the Code of Conduct, with evidence of such behavior or action,</li>
+                          <li>5. Update any information of his or her personal profile so as to reflect a true and accurate representation, and,</li>
+                          <li>6. Respect all conditions stated in these Terms of Use.</li>
+                   </ul>
+                <br>
+                <p><strong>Unacceptable Conduct</strong>: the 20 prohibited actions. Each Member represents and warrants that he or she will not do any of the following acts or behaviors, at any time with respect to usage of the service:</p>
+                <br>
+                     <ul>
+                        <li>1. Use the Service for professional or commercial purposes, including but not limited to canvassing, soliciting or prostitution, or for any non-private purposes.</li>
+                        <li>2. Use any information obtained on the Service for any unauthorized or unlawful purpose.</li>
+                        <li>3. Impersonate any other person or entity, or post pictures and/or any information that does not correspond to his/her true identity.</li>
+                        <li>4. Post or submit any content that: (a) encourages or otherwise depicts or glamorizes drug use (including alcohol and cigarettes), (b) uses offensive language or images, or is otherwise patently offensive, (c) promotes an illegal or unauthorized copy of another person's copyrighted work, (d) characterizes violence as acceptable, glamorous or desirable, (e) contains any illegal material or any material that infringes or violates another party's rights (including and not limited to intellectual property rights and rights of privacy and publicity), (f) provides instructional information about illegal activities such as making or buying illegal weapons, violating privacy, or providing or creating computer viruses, (g) solicits passwords or personal identifying information for commercial or unlawful purposes from other users, (h) provides or promotes inaccurate, misleading or false information.</li>
+                        <li>5. Write, utter, state or publish libelous, defamatory or slanderous statements on the Service and/or offline regarding any Member or Member’s personal information.</li>
+                        <li>6. Write, utter, state or publish any statement on the Service and/or offline promoting by stereotypical depiction or otherwise any form of racism, denial of the Holocaust, discrimination, xenophobia, pedophilia or any other type of physical and/or verbal violence of any kind against any group, or endangering public order.</li>
+                        <li>7. Use abusive, obscene, profane, offensive, sexist, threatening, harassing, racially offensive, or otherwise inappropriate behaviors when communicating with other Members or with Meetigo’s customer service representatives.</li>
+                        <li>8. Post pictures and/or information concerning minors on the Service.</li>
+                        <li>9. Upload or publish any shocking, offensive or sexually charged pictures or content in your profile and your personal space on the Service.</li>
+                        <li>10. Transmit, distribute, post or submit any information, data, including without limitation, photographs of others, personal contact information or credit, debit, calling card or account numbers.</li>
+                        <li>11. Divulge or transmit your personal information in order to enable another Member to contact you through means other than through Meetigo, or retrieve or use personal information of Members to send emails, or to contact them in any way for any reasons other than through Meetigo.</li>
+                        <li>12. Attempt to harm or disrupt the Service in any way and by any means including, but not limited to the use of viruses, cancel bots, Trojan horses, harmful code, flood pings, denial of service attacks, packet or IP spoofing, forged routing or electronic mail address information or similar methods or technology, including methods that in any way reproduces or circumvents the navigational structure or presentation of the Service or its contents.</li>
+                        <li>13. Use the Service in connection with the distribution of unsolicited commercial email ("Spam") or advertisements.</li>
+                        <li>14. Collect or store any information about any other Members other than in the course of the permitted use of our Service,</li>
+                        <li>15. "Stalk," harass or promote the harassment of any other Member of the Service.</li>
+                        <li>16. Communicate to other Members or acquaintances your personal information concerning the access to the Service (login and password). If this is the case, Meetigo cannot be held responsible for any malevolent, fraudulent or abusive use of the concerned account and the Member will be the only one to suffer the consequences.</li>
+                        <li>17. Post on the Meetigo’s Service, via their personal space, any content (texts, images, information, software…) of others being protected by any intellectual property rights, without having obtained the prior consent of the owners.</li>
+                        <li>18. Extract, use, post, distribute, duplicate and/or reproduce in any way any elements of intellectual property belonging to Meetigo (including its trademarks, image, logos, or any other intellectual property rights) for any reasons, whether commercial or not, legal or not.</li>
+                        <li>19. Modify, adapt, sublicense, translate, sell, reverse engineer, decipher, decompile or otherwise disassemble any portion of the Service or our Site or any software used on or for the Service.</li>
+                        <li>20. Assist any third party in doing any of the foregoing.</li>
+                   </ul>
+                <br>
+                <p><strong>Take Reasonable Precautions</strong>. Each Member agrees to take reasonable precautions in all interactions with other Members of the Service, particularly if he or she decides to meet offline or in person. Each Member should not provide his or her financial information (for example, credit card or bank account information) to other Members of the Service.</p>
+                <br>
+                <p><strong>Article 3.2.1. Member’s Authorization.</strong></p>
+                <br>
+                <p>Subscription to Meetigo signifies a voluntary commitment. A Member voluntarily submits and provides content to Meetigo.</p>
+                <p>By submitting any content to our Service (including, but not limited to, your photograph), you authorize Meetigo to publish pictures, information, or any other data you submit to be posted on meetigo.fr. In doing so, you (1) pledge and guarantee to us that all content, including your photograph, is posted by you and that you are the exclusive author of the content, including your photograph, and use of your content by us will not infringe or violate the rights of any third party, and also (2) also assign and permit Meetigo, its licensees, affiliates and successors, a perpetual, worldwide, non-exclusive, royalty-free right and license to use, reproduce, display, and modify such content or incorporate into other works. You also grant license for the previously mentioned materials to Meetigo, and waive any and all rights to be identified as the author of the content, including your photograph, and any similar rights in any jurisdiction, for any country, state or city, national or international.</p>
+                
+                <br>
+                <p><strong>Article 3.3. Suspension, Discontinuance, Termination and Exclusion.</strong></p>
+                <br>
+                
+                
+                    <ul>
+                        <li>1. Termination of a Member’s account by Member: 
+                        A Member may at any time request the termination of his account by sending to Meetigo an email at unsubscribe@meetigo.fr. Meetigo will remove the posting of the Member’s personal information from its website no more than 30 days after receipt of the e-mail.
+                        There will be no reimbursement for unused credits existing on the Member’s account on the day of termination of the account.</li>
+                        <li>2. Voluntary Suspension of Service:
+                        A Member may at any time request that Meetigo suspend his account. Meetigo will then remove the profile of this Member from the public space, so that it will no longer be searchable or available for chat/PM requests from any other Member. The profile and personal information will be stored by Meetigo and the Member may reactivate the Service at any time without needing to create a new profile.
+                        Unused credits existing on the Member’s account on the day of suspension will be stored and preserved until reactivated. However, such credits will be lost if they expire without being used within the allotted time. </li>
+                        <li>3. Removal of a Member by Meetigo:
+                        Meetigo can temporarily or permanently restrict access of its Service to a Member at any time and without notice, if the Member violates any terms and conditions of the Service. Meetigo may, depending on the seriousness of the violation, issue a simple warning to the Member in question with notification of the violation, request that the Member cease the alleged conduct or act immediately, or Meetigo may temporarily or permanently terminate the Member’s account without notice.
+                        Unused credits existing on the Member’s account on the day of account removal or termination will be lost, and there will be no reimbursement or compensation.</li>
+                        <li>4. Discontinuance: 
+                        We reserve the right to modify or discontinue at any time, temporarily or permanently, any portion of our Service with or without prior notice. Meetigo is not liable to you or to any third party for any modification or discontinuance of our Service.</li>
+                        <li>5. Blocking of IP Address: 
+                        In order to protect the integrity of the Service, we reserve the right at any time in our sole discretion to block users from certain IP addresses from accessing our Site.</li>
+                        <li>6. IP Disclosure :
+                        Meetigo reserves the right to disclose the IP address of a member, under the Federal ECPA or other appropriate jurisdictions.</li>
+                   </ul>
+                <br>
+                <br>
+                <p><strong>Article 4. - Use of Personal Information – Privacy Policy.</strong></p>
+                <br>
+                <p>The terms and conditions of Meetigo’s Privacy Policy are incorporated herein as referred to <strong><a href="https://www.meetigo.fr/index.php?page=statique&amp;id_page=4">below</a></strong>.</p>
+                <br>
+                <br>
+                <p><strong>Article 5. Liabilities and warranties.</strong></p>
+                <br>
+                <p><strong>Article 5.1 Limitation of Liability.</strong></p>
+                <br>
+                <ol><li>IF YOU USE OUR SERVICE, YOU DO SO AT YOUR OWN AND SOLE RISK. OUR SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. WE EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, QUALIFICATION FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.</li>
+                <li>YOU AGREE THAT WE WILL NOT BE LIABLE FOR ANY DAMAGES WHATSOEVER, INCLUDING DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES (EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), ARISING FROM, RELATING TO OR CONNECTED WITH: (A) THE USE OR INABILITY TO USE OUR SERVICE, (B) THE COST OF REPLACEMENT OF ANY GOODS, SERVICES OR INFORMATION PURCHASED OR OBTAINED AS A RESULT OF ANY INFORMATION OR TRANSACTIONS ENTERED INTO THROUGH OR AS A RESULT OF OUR SERVICE, (C) DISCLOSURES, UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR CONTENT, (D) CONTENT, STATEMENTS, CONDUCT OR OMISSIONS OF ANY SERVICE PROVIDERS OR OTHER THIRD PARTY ON OUR SERVICE, (E) ACTIONS OR INACTIONS OF OTHER MEMBERS OF OUR SERVICE OR ANY OTHER THIRD PARTIES FOR ANY REASON, (F) ANY LACK OF PRECAUTIONS IN YOUR INTERACTIONS WITH OTHER MEMBERS OF THE SERVICE ONLINE AND OFFLINE, (G) ANY FAILURE TO ACT OR NEGLIGENT ACTS FROM ONE OF OUR MODERATORS SUCH AS FAILING TO SCREEN OR REMOVE OFFENSIVE OR MALEVOLENT CONTENT FROM A PUBLIC AREA, (H) the use of the Service, including but not limited to bodily injury, emotional distress, and/or any other damages resulting from communications or meetings with other Members of the Service or persons you meet through the Service, (I) the content of messages or communications received from or sent by other Members of the Service. OR (J) ANY OTHER MATTER ARISING FROM, RELATING TO OR CONNECTED WITH OUR SERVICE OR THESE TERMS OF USE.</li>
+                <li>WE ARE NOT RESPONSIBLE FOR ANY PROBLEMS OR TECHNICAL MALFUNCTION OF ANY TELEPHONE NETWORK OR LINES, COMPUTER ONLINE SYSTEMS, SERVERS OR PROVIDERS, COMPUTER EQUIPMENT, SOFTWARE, FAILURE OF EMAIL/CHAT OR PERFORMANCE ON ACCOUNT OF TECHNICAL PROBLEMS OR TRAFFIC CONGESTION OF THE INTERNET, WEBSITE OR COMBINATION THEREOF, INCLUDING INJURY OR DAMAGE TO USERS OR TO ANY OTHER PERSON'S COMPUTER, RELATED TO OR RESULTING FROM PARTICIPATING OR DOWNLOADING MATERIALS IN CONNECTION WITH THE SITE AND/OR IN CONNECTION WITH THE SERVICE. UNDER NO CIRCUMSTANCES WILL WE OR ANY OF OUR AFFILIATES, ADVERTISERS, PROMOTERS OR DISTRIBUTION PARTNERS BE RESPONSIBLE FOR ANY LOSS OR DAMAGE, INCLUDING PERSONAL INJURY OR DEATH, RESULTING FROM ANYONE'S USE OF THE SITE OR THE SERVICE, ANY CONTENT POSTED ON OUR SITE OR TRANSMITTED TO USERS, OR ANY INTERACTIONS BETWEEN USERS OF THE SITE, WHETHER ONLINE OR OFFLINE.</li>
+                <li>FORCE MAJEURE. UNLESS OTHERWISE STATED, WE WILL NOT BE LIABLE FOR ANY FAILURE OR DELAY IN PERFORMING UNDER THESE TERMS OF USE WHERE SUCH FAILURE OR DELAY IS DUE TO CAUSES BEYOND OUR REASONABLE CONTROL, INCLUDING NATURAL CATASTROPHES, WAR OR CIVIL UNREST, GOVERNMENTAL ACTS OR OMISSIONS, LAWS OR REGULATIONS, TERRORISM, CYBERATTACK, LABOR STRIKES OR LOCK-OUTS, COMMUNICATIONS SYSTEMS BREAKDOWNS, HARDWARE OR SOFTWARE FAILURES, TRANSPORTATION OR POWER STOPPAGES OR SLOWDOWNS OR THE INABILITY TO PROCURE SUPPLIES OR MATERIALS.</li>
+                <li>THIRD PARTY CONTENT. We do not control the content that you may access from third parties while using the Service either via our Service or through links to third party web sites ("Third Party Content"). By using our Service, you agree that you may be exposed to Third Party Content that may be false, offensive, indecent or otherwise objectionable. You agree that you must evaluate, and bear all risks associated with Third Party Content, including without limitation, profiles of other users of our Service.</li>
+                <li>LIMITATION PROVISION. IN NO EVENT WILL OUR AGGREGATE LIABILITY TO YOU OR ANY THIRD PARTY IN ANY MATTER ARISING FROM, RELATING TO OR CONNECTED WITH OUR SERVICE OR THESE TERMS EXCEED THE PRICE PAID BY A MEMBER (WHICH CAN BE AS LOW AS ZERO IF NO PRICE WAS PAID).</li>
+                </ol>
+                <br>
+                <p><strong>Article 5.2 Indemnity.</strong></p>
+                <br>
+                <p>You agree to defend, indemnify and hold us, and our subsidiaries, parents, affiliates, and each of our and their directors, officers, managers, members, partners, agents and employees, harmless from any claim, demand, action, damage, loss, cost or expense, including without limitation, reasonable attorneys' fees, incurred in connection with any suit or proceeding brought against us arising out of your use of our Service or alleging facts or circumstances that could constitute a breach by you of any provision of these Terms of Use and/or any of the representations and warranties set forth herein. If you are obligated to indemnify us, we will have the right, in our sole discretion, to control any action or proceeding and determine if and how we wish to settle it.</p>
+                <br>
+                <p><strong>Article 5.3 Ownership Rights.</strong></p>
+                <br>
+                <p>Meetigo’s name, brand, logos, graphic design and the texts appearing on the website are the exclusive property of Meetigo. Meetigo is a protected trademark. They cannot be reproduced, used, whether totally or partially without the previous written consent of Meetigo.
+                If you believe that your work has been copied and posted on our Service in a way that constitutes copyright infringement, please contact us and send us your notice of infringement by sending us an e-mail at the following address: info@meetigo.fr.</p>
+                <br>
+                <p><strong>Article 5.4 Jurisdiction and Applicable Law.</strong></p>
+                <br>
+                <p>These Terms of Use shall be governed, construed and applied in accordance with the laws of the State of New York, excluding its Conflict of Laws. Any dispute arising out of these Terms of Use shall be exclusively submitted to the Supreme Court of the State of New York, county of New York.
+                Injunctive relief. Meetigo may apply for preliminary injunctions or temporary restraining orders, or other temporary relief in the event of a breach of any of the Terms of Use which may cause irreparable harm to Meetigo.
+                </p>
+                <p>Injunctive relief. Meetigo may apply for preliminary injunctions or temporary restraining orders, or other temporary relief in the event of a breach of any of the Terms of Use which may cause irreparable harm to Meetigo.</p>
+                <br>
+                <br>
+                <p><strong>Article 6. Miscellaneous</strong></p>
+                <br>
+                <p>These Terms of Use contain the entire agreement of the parties regarding their subject matter, and supersede all prior and contemporaneous agreements and understandings between the parties regarding their subject matter. No failure or delay by a party in exercising any right, power or privilege under these Terms shall operate as a waiver thereof. The Member does not have the right to assign this Agreement or any of your rights to the Service to anyone. Meetigo has the right to assign any or all of its rights and obligations under this Agreement or to the Service to any third party. Provided such rights and obligations are assumed by such third party, Meetigo shall be relieved of any and all liability under this Agreement. The invalidity or unenforceability of any of these Terms shall not affect the validity or enforceability of any other of these Terms, all of which shall remain in full force and effect. The parties accept that the present Terms of Use are drafted in English.</p>
+                <br>
+                <p><strong>Article 6.1 Cookies.</strong></p>
+                <br>
+                <p>Cookies are used to identify the Member when surfing of the website in order to allow the Member to continue browsing without having to re-enter this information for each new page. The Member can refuse the use of cookies through his Internet provider (please contact your provider) and by modifying the options of his/her web browser.</p>
+                <br>
+                <p><strong>Article 6.2 Contact.</strong></p>
+                <br>
+                <p>Meetigo is the trademark and commercial name of Blackdivine, a limited liability company (LLC), registered in the State of Texas, with head offices located at: 60 Broad Street, Suite 3502, New York, New York 10004, represented by Mr. Teddy Truchot, Director of Publication of the Meetigo site. For questions, you can reach us at the following address: info@meetigo.fr.</p>
+                <br>
+                <br>
+                <div style="text-align:right;">
+                </div></div>
+        </div>
+    </div>
+    <div id="privacy-menu" class="overlay-menu" style="display: none;">
+        <div class="overlay-menu-header">
+			<div></div>
+			<div>Politique de confidentialité</div>
+			<div class="overlay-menu-close"><i id="closePrivacyMenu" class="fa fa-times" aria-hidden="true"></i></div>
+		</div>
+		<div class="overlay-menu-items" style="padding: 25px;">
+            <div class="static-content"><h2 class="media">La politique de confidentialité de Meetigo</h2>
+                <p>(Date effective: 24/05/2018)</p>
+                <br>
+                <p><strong>Meetigo s'engage à préserver et à protéger la vie privée de ses membres. Cette politique de confidentialité, en vigueur depuis le 24 mai 2018, s'applique à https://www.meetigo.fr ainsi qu'à l'application mobile Meetigo, toutes deux détenues et exploitées par BlackDivine LLC opérant en tant que Meetigo («La Société» ou «Nous»). Cette politique de confidentialité décrit la façon dont nous collectons et utilisons les informations personnelles de nos utilisateurs («Membres» ou «vous») sur notre site Web https://www.meetigo.fr ainsi que sur notre application mobile (ensemble, «Meetigo»). Cette politique de confidentialité décrit également les choix qui s'offrent à vous en ce qui concerne l'utilisation de vos informations personnelles et la façon dont vous pouvez accéder et mettre à jour ces informations.</strong></p>
+                <br>
+                <p><strong>Nous respecterons ces sept principes :</strong></p>
+                <br>
+                    <p><strong>Information</strong> – Nous informons nos membres à propos de la collecte de leurs données personnelles et sur la façon dont elles seront utilisées.</p>
+                <br>
+                    <p><strong>Choix</strong> – Nous donnons à nos membres la possibilité de refuser la collecte de leurs données personnelles ainsi que le droit de refuser le transfert de leurs données à des tiers.</p>
+                <br>
+                    <p><strong>Transferts de données</strong> - Les transferts de données à des tiers ne peuvent avoir lieu que vers d'autres organisations qui suivent des principes adéquats de protection des données.</p>
+                <br>
+                    <p><strong>Sécurité</strong> – Nous mettons tout en œuvre pour éviter la perte des informations collectées.</p>
+                <br>
+                    <p><strong>Intégrité des données</strong> – Nous attestons que les données collectées sont pertinentes et fiables aux fins pour lesquelles elles ont été collectées.</p>
+                <br><div id="sensitive"></div>
+                    <p><strong>Accès</strong> – Nous fournissons à nos membres l'accès à leurs informations collectées et nous respectons leur droit de corriger ou de supprimer ces données si elles sont inexactes.</p>
+                <br>
+                    <p><strong>Application de la loi</strong> – La présente politique de confidentialité informe nos membres de leurs droits et de la façon d'exercer leurs droits.</p>
+                <br>
+                <p><strong>Quelles sont les informations collectées par Meetigo ?</strong></p>
+                <br>
+                <p>Lorsque vous utilisez Meetigo, vous avez la possibilité de créer votre profil personnel, nouer des relations, envoyer des messages, effectuer des recherches et des requêtes, envoyer des cadeaux virtuels et transmettre des informations via différents canaux (les «Services»). Afin de faciliter votre utilisation des services Meetigo, nous collectons des informations personnelles, telles que votre âge, adresse e-mail, identifiant, mot de passe, profession, sexe, langue, description physique, photos, statut marital, préférences sexuelles, localisation, ainsi que votre niveau d'éducation afin de vous fournir nos Services, permettre à nos moteurs de recherche de générer les meilleurs résultats de prospects qui pourraient vous intéresser, et offrir des fonctionnalités personnalisées. Nous conservons également les photos, les recherches enregistrées, les messages privés et l'adresse IP que vous utilisez ou saisissez lorsque vous utilisez les Services.</p>
+                <br>
+                <p>Certaines des informations que vous choisissez de fournir lorsque vous vous inscrivez, mettez à jour ou modifiez votre compte sont considérées comme «sensibles» ou «spéciales» (par exemple, vos préférences sexuelles, vos activités sexuelles ou votre origine raciale / ethnique). Parce que vous partagez volontairement ces informations lorsque vous vous enregistrez sur Meetigo ou que vous les partagez via le Service, vous consentez librement au traitement de ces informations.</p>
+                <br>
+                <p>Lorsque vous vous inscrivez à nos Services, nous vous enverrons un e-mail de confirmation de bienvenue, basé sur les informations personnelles que vous nous fournissez, pour vérifier votre compte. Nous communiquerons également avec vous en réponse à vos demandes de renseignements, pour vous fournir les services que vous demandez et pour gérer votre compte. Nous communiquerons avec vous par courrier électronique, conformément à vos souhaits.</p>
+                <br>
+                <p>Nous vous enverrons des annonces strictement liées au service en de rares occasions lorsque cela est nécessaire. Par exemple, si notre service est temporairement suspendu pour maintenance, nous pouvons vous envoyer un e-mail. En règle générale, vous ne pouvez pas refuser ces communications, qui ne sont pas de nature promotionnelle. Si vous ne souhaitez pas les recevoir, vous avez la possibilité de désactiver votre compte.</p>
+                <br>
+                <p>Nous vous enverrons occasionnellement des informations sur les produits, services, offres spéciales, promotions. Par respect pour votre vie privée, nous vous proposons l'option de ne pas recevoir ces types de communications. Veuillez consulter la section "Droit de rétractation" ci-dessous.</p>
+                <br>
+                <p>Si vous souhaitez vous abonner à notre newsletter, nous utiliserons votre nom d'utilisateur et votre adresse e-mail pour vous l’envoyer. Par respect pour votre vie privée, nous vous fournissons un moyen de vous désinscrire de cette newsletter. Veuillez consulter la section "Droit de rétractation" ci-dessous.</p>
+                <br>
+                <p>Nous enregistrerons vos informations personnelles (adresse e-mail) et vos données démographiques (telles que votre ville, votre âge, votre sexe) sur nos serveurs. Meetigo peut partager avec nos consultants uniquement des données démographiques générales non associées au profil d'un utilisateur pour améliorer nos Services, mais nous ne vendons ou ne transférons en aucun cas ces informations à des tiers.</p>
+                <br>
+                <p><strong>Comment Meetigo utilisera-t-elle mes informations personnelles ?</strong></p>
+                <br>
+                <p>Meetigo utilisera vos informations personnelles pour traiter vos transactions d'achat, pour vous envoyer des documents marketing et promotionnels par e-mail, pour vous tenir au courant des mises à jour et pour nous aider à améliorer nos services, notamment en créant un fichier journal pour garantir la sécurité du site. Toutes les notifications seront envoyées par e-mail ou des notifications push pour l'application mobile. Pour plus d'informations sur la «désactivation» de ce type de communication, veuillez consulter la section «Droit de rétractation» ci-dessous.</p>
+                <br>
+                <p><strong>Pourquoi Meetigo recueille-t-il des informations sur moi ?</strong></p>
+                <br>
+                <p>Nous avons besoin de vos informations personnelles pour fournir un service de haute qualité. Les informations de votre profil (votre nom d'utilisateur, vos préférences, votre âge, votre sexe) permettent à Meetigo de vous fournir un environnement personnalisé, et permettent aux autres membres de vous trouver grâce à notre outil de recherche avancée. D'autres informations (y compris votre nom, votre adresse e-mail et votre numéro de carte de crédit (liste non-exhaustive) seront utilisées pour traiter les transactions sur le site, bien que nous ne conservions pas votre nom ou vos informations de carte de crédit. Nous conservons cependant les détails de vos achats de produits spécifiques et de vos transactions, intérêts ou préférences. Nous pouvons collecter des informations non personnelles sur la navigation des Membres sur le site.</p>
+                <br>
+                <p>Nous utilisons des tiers pour faciliter certaines transactions. Trois sociétés, Payvision, Paysafecard, Paypal et Skrill, nous permettent de traiter vos paiements par carte de crédit. Deux autres sociétés tierces, Mailgun et Smartfocus, nous permettent de vous envoyer des emails, par conséquent elles ont accès à votre email, sexe et identifiant. Enfin, Rollbar nous permet de monitorer et d'analyser des problèmes techniques, tels que des plantages ou des erreurs en sauvegardant l'adresse IP, l'agent utilisateur et le numéro d'identification unique du membre; ces informations sont conservées pour un maximum de 6 mois. Ces sociétés sont autorisées à utiliser vos informations personnelles uniquement si nécessaire pour nous fournir ces services. Nous partagerons vos informations personnelles avec des tiers uniquement de la manière décrite dans cette politique de confidentialité. Nous ne vendons pas vos informations personnelles à des tiers.</p>
+                <br>
+                <p>Nous ne vendrons ni ne fournirons aucune donnée personnelle à quiconque sauf dans les circonstances suivantes: (1) aux institutions financières fournissant des services financiers ou connexes (pour traiter le paiement), (2) aux autorités gouvernementales (pour la protection des données), (3) en lien avec une réorganisation corporative, une fusion ou une fusion de la Société avec une autre société ou une vente de la totalité ou d'une partie substantielle de nos actifs, à condition que l'information divulguée continue d'être utilisée aux fins permises par la présente Politique de confidentialité, (4) par un tiers sans votre consentement si nous avons des raisons de croire que la divulgation de cette information est nécessaire pour identifier, contacter ou intenter une action en justice contre quelqu'un qui pourrait causer préjudice  ou  porter atteinte (soit intentionnellement ou involontairement) à nos droits ou propriété, à d'autres utilisateurs de site Web ou à toute autre personne qui pourrait être lésée par de telles activités, ou (5) si cela est requis par la loi et lorsque nous pensons que la divulgation est nécessaire pour protéger nos droits et / ou pour se conformer à une procédure judiciaire, à une ordonnance d'un tribunal ou à une procédure judiciaire exécutée par notre Société.</p>
+                <br>
+                <p>Nous ne collectons pas intentionnellement des informations de mineurs de moins de 18 ans, qui ne sont pas autorisés à accéder ou à utiliser Meetigo.</p>
+                <br>
+                <p><strong>Où Meetigo collecte-t-il des informations ?</strong></p>
+                <br>
+                <p>Les serveurs de Meetigo sont situés aux États-Unis. Pour recevoir les Services de Meetigo, les Membres comprennent qu’ils doivent fournir certaines données personnelles. En fournissant ces informations personnelles à Meetigo, tous les Membres, y compris (mais sans s'y limiter) les membres au Canada et de l'Union Européenne, comprennent pleinement et consentent sans ambiguïté à cette politique de confidentialité et au transfert de ces informations personnelles à travers les frontières internationales conformément aux opérations normales de Meetigo, y compris la collecte, le stockage et le traitement de ces informations aux États-Unis d'Amérique.</p>
+                <br>
+                <p><strong>Dans quelle mesure mes informations personnelles sur Meetigo sont-elles sécurisées ?</strong></p>
+                <br>
+                <p>Vos informations personnelles sont très importantes pour nous. Meetigo utilise différentes pratiques techniques et de management pour protéger la confidentialité, la sécurité et l'intégrité des informations que vous partagez avec nous.</p>
+                <br>
+                <p>Votre numéro de carte de crédit et d'autres informations personnelles sont protégés pendant le paiement grâce à l’utilisation de la technologie Secure Socket Layer (SSL) qui permet la transmission sécurisée d'informations de votre ordinateur à nos serveurs. Notre processus de paiement est conforme à la norme PCI. </p>
+                <br>
+                <p>Nous respectons les normes généralement reconnues pour protéger les informations personnelles qui nous sont soumises, à la fois pendant la transmission et également lorsque nous les recevons. Cependant, aucune méthode de transmission sur Internet ou méthode de stockage électronique n'est sûre à 100%. Par conséquent, nous ne pouvons pas garantir sa sécurité absolue. Si vous avez des questions sur la sécurité sur notre site Web, vous pouvez nous contacter à <a href="mailto:privacy@meetigo.fr">privacy@meetigo.fr</a>.</p>
+                <br>
+                <p>Lorsque vous vous enregistrez sur Meetigo, vous pouvez utiliser un pseudonyme pour le nom d'utilisateur, indiquer la ville où vous habitez et fournir une description de vous-même et de vos préférences. Votre vrai nom n'apparaîtra jamais sur le site, mais sachez que certains documents que vous publiez (par exemple, des photos personnelles) peuvent vous identifier.</p>
+                <br>
+                <p><strong>Combien de temps Meetigo conservera mes informations personnelles ?</strong></p>
+                <br>
+                <p>Nous conserverons vos informations personnelles tant que votre profil reste actif. Une fois que vous cessez d'être membre, Meetigo n'archive pas vos informations personnelles mais les supprime automatiquement de ses serveurs. Nous conservons cependant un enregistrement du pays d'origine de votre compte, de la langue du compte et de l'activité de connexion en fonction de votre adresse IP et / ou de votre agent utilisateur jusqu'à un an après la suppression de votre compte, ainsi que toute information que vous avez volontairement transféré à un autre membre.</p>
+                <br>
+                <p><strong>Comment puis-je accéder à mes informations personnelles et les gérer ?</strong></p>
+                <br>
+                <p>Vous pouvez accéder et gérer vos informations depuis la page "gérer mon profil" ou "mon compte" pendant que vous êtes Membre. Lorsque vous cessez d'être Membre, vous pouvez nous contacter à tout moment pour accéder aux informations non personnelles en notre possession, dans la mesure où elles existent, mais nous aurons besoin que vous nous fournissiez des informations suffisantes pour vérifier votre identité.</p>
+                <br>
+                <p>Si vos informations personnelles changent, ou si vous ne désirez plus notre service, vous pouvez corriger, mettre à jour, modifier, supprimer et / ou désactiver votre compte en nous écrivant à <a href="mailto:info@meetigo.fr">info@meetigo.fr</a>. Nous répondrons à votre demande dans les 30 jours.</p>
+                <br>
+                <p><strong>Puis-je me désinscrire de la collecte de données ? « Droit de rétractation »</strong></p>
+                <br>
+                <br>
+                <p>Meetigo n'envoie pas de courrier marketing non sollicité. Meetigo vous enverra des e-mails de marketing uniquement si vous acceptez de recevoir ces e-mails. Vous pouvez désactiver cette fonction dans les paramètres de votre compte. </p><div id="cookie"></div>Nous pouvons vous envoyer des e-mails pour vous fournir des mises à jour concernant votre compte ou pour vous informer des activités (par exemple, si un autre membre a consulté votre profil). Si vous avez des questions ou des demandes concernant la confidentialité de vos informations, veuillez nous contacter à <a href="mailto:info@meetigo.fr">info@meetigo.fr</a>.<p></p>
+                <br>
+                <p><strong>Quelles informations récoltez-vous auprès des visiteurs ?</strong></p>
+                <br>
+                <p>Meetigo peut partager des informations non personnelles (y compris, mais sans s'y limiter, les accès à notre serveur, les types de navigateurs utilisés pour accéder à notre site, les pages vues et les modes de navigation) avec des techniciens pour des raisons statistiques ou pour améliorer le service. Les informations collectées de cette manière ne nous fournissent aucune information personnelle sur nos membres. Il nous aide à suivre «d'où» proviennent nos membres, nous permet d'identifier les zones à fort trafic et de déterminer les moyens les plus efficaces de communiquer avec nos membres. Meetigo peut également utiliser des dispositifs appelés «balises Web» pour nous aider à identifier quand les courriels qui vous ont été envoyés ont été reçus et lus.</p>
+                <br>
+                <p>Nous utilisons votre adresse IP pour maintenir à jour notre site et être en mesure de réagir rapidement à tout problème avec notre serveur.</p>
+                <br>
+                <p>Nous utilisons des cookies pour identifier le trafic généré et vous fournir un environnement personnalisé. Les cookies sont des éléments d'information placés sur votre disque dur afin que nous puissions vous reconnaître lorsque vous nous visitez. Les cookies nous permettent de vous fournir un environnement convivial et un accès très personnalisé. L'utilisation de cookies est très courante. Si vous n'êtes pas à l'aise avec cela, vous pouvez désactiver les cookies via les options de votre navigateur Internet. Meetigo ne fonctionnera plus du tout si vous désactivez les cookies.</p>
+                <br>
+                <p>Nous utilisons Google Analytics, un service de suivi tiers, qui utilise des cookies pour suivre les informations non personnelles de l’ensemble des visiteurs de notre site afin d’obtenir des statistiques d'utilisation et de volume. Certains de nos partenaires commerciaux (par exemple, Google Analytics) utilisent des cookies sur notre site. Nous n'avons aucun accès ou contrôle sur ces cookies. Cette politique de confidentialité couvre uniquement l'utilisation des cookies générés par Meetigo et ne couvre pas l'utilisation de cookies utilisés par des tiers.</p>
+                <br>
+                <p><strong>GIF invisibles (Web Beacons/Web Bugs/Tracking Pixel)</strong></p>
+                <br>
+                <p>Nous, ainsi que notre partenaire publicitaire tiers, utilisons une technologie logicielle appelée « gifs invisibles » (alias Web Beacons / Web Bugs / Tracking Pixel), qui nous aide à mieux gérer le contenu de notre site en nous informant du contenu efficace. Ces gifs invisibles sont de minuscules éléments graphiques avec un identifiant unique, similaire aux cookies, et sont utilisés pour suivre les mouvements en ligne des utilisateurs Web. Contrairement aux cookies, qui sont stockés sur le disque dur de l'ordinateur de l’utilisateur, les gifs invisibles sont intégrés de manière invisible sur les pages Web et sont à peu près de la taille du point à la fin de cette phrase. Nous ne faisons pas de liens entre les informations recueillies par les pixels invisibles et les informations personnelles de nos clients.</p>
+                <br>
+                <p><strong>Désactiver les cookies et le suivi</strong></p>
+                <br>
+                <p>Comme mentionné précédemment, vous pouvez refuser le placement de cookies ou d'autres logiciels de suivi. Cependant, en cas de refus, le fonctionnement des services sera altéré et vous ne serez plus en mesure d'utiliser les Services. </p>
+                <br>
+                <p>Si vous souhaitez désactiver l'utilisation de cookies ou d'autres technologies de suivi, veuillez ne pas utiliser le Service.</p>
+                <br>
+                <p><strong>Liens vers d'autres sites Web</strong></p>
+                <br>
+                <p>Notre site comprend des liens vers d'autres sites web dont les pratiques de confidentialité peuvent différer de celles de Meetigo. Si vous soumettez des informations personnelles sur l'un de ces sites, vos informations sont régies par leurs politiques de confidentialité. Nous vous encourageons à lire attentivement la politique de confidentialité de tout site Web que vous visitez.</p>
+                <br>
+                <p><strong>Transitions commerciales</strong></p>
+                <br>
+                <p>Dans le cas où la Société fait l’objet d’une transition commerciale telle qu'une fusion, une acquisition par une autre société ou la vente de tout ou d’une partie de ses actifs, vos informations personnelles feront probablement partie des actifs transférés. Vous serez informé par e-mail ou par un avis visible sur notre site Web 30 jours avant tout changement de propriété ou de contrôle de vos informations personnelles.</p>
+                <br>
+                <p><strong>Changements de la politique de confidentialité</strong></p>
+                <br>
+                <p>Si nous décidons de modifier nos pratiques de confidentialité, nous publierons ces modifications dans cette politique de confidentialité actuelle, sur la page d'accueil du site et à d'autres endroits que nous jugerons appropriés afin que vous puissiez prendre connaissance des informations que nous collectons, de la façon dont nous les utilisons et dans quelles circonstances. Dans le cas échéant, vous en serez également informés. Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment, veuillez donc la consulter fréquemment. Si nous apportons des modifications importantes, nous vous en informerons ici, par courrier électronique ou sur notre page d'accueil avant que la modification ne devienne effective.</p>
+                <br>
+                <p><strong>Litiges</strong></p>
+                <br>
+                <p>Dans le cas où un litige ne peut être solutionné en interne, nous utiliserons les services de PrivacyTrust.</p>
+                <br>
+                <p><strong>Contactez-nous</strong></p>
+                <br>
+                <p>Si vous avez des questions ou des suggestions concernant notre politique de confidentialité, veuillez nous contacter à :</p>
+                <br>
+                <br>
+                <p><strong>Si vous résidez en Californie</strong></p>
+                <br>
+                <p>Conformément à l'article 1798.83 du code civil californien, un résident Californien qui a fourni des renseignements personnels à une entreprise avec laquelle il a établi une relation d'affaires à des fins personnelles, familiales ou domestiques («client californien»), a la possibilité de demander à l'entreprise si ses renseignements personnels ont été divulgués à des tiers à des fins de marketing direct. </p>
+                <br>
+                <p>En général, si l'entreprise a effectivement divulgué des renseignements personnels, à la réception de la demande effectuée par un client californien, l'entreprise est tenue de fournir une liste de tous les tiers auxquels ces renseignements personnels ont été divulgués au cours de l'année civile précédente, ainsi qu'une liste des catégories de renseignements personnels divulgués.</p> 
+                <br>
+                <p>Cependant, en vertu de la loi, une entreprise n'est pas tenue de fournir les listes décrites ci-dessus si elle adopte et communique au public (dans sa politique de confidentialité) une politique de non divulgation des renseignements personnels des clients à des tiers, à moins que le client accepte en premier lieu de communiquer ses informations, tant que l'entreprise maintient et communique cette politique. Au contraire, l'entreprise peut se conformer à la loi en notifiant au client son droit d'empêcher la divulgation de renseignements personnels et en fournissant un moyen gratuit d'exercer ce droit.</p>
+                <br>
+                <p>Comme indiqué dans cette Politique de confidentialité, nous ne partageons pas les informations avec des tiers à des fins de marketing direct, sauf si vous acceptez explicitement une telle divulgation - généralement en choisissant de recevoir des informations d'un tiers participant à une activité décrite sur notre site. Si vous nous demandez de partager vos informations avec un tiers à des fins de marketing, nous partagerons uniquement les informations relatives à cette activité spécifique, car nous ne partageons pas les informations avec des tiers de façon continue. Pour empêcher la divulgation de vos renseignements personnels à des fins de marketing direct par un tiers, n'optez pas pour une telle utilisation lorsque vous fournissez des renseignements personnels sur notre site. Veuillez noter que chaque fois que vous acceptez de recevoir de futures communications d'un tiers, vos informations seront soumises à la politique de confidentialité de la tierce partie. Si vous décidez par la suite que vous ne souhaitez pas que cette tierce partie utilise vos informations, vous devrez contacter directement le tiers, car nous n'avons aucun contrôle sur la façon dont les tiers utilisent les informations. Vous devriez toujours revoir la politique de confidentialité de toute partie qui recueille vos informations pour déterminer comment cette entité va gérer vos informations.</p>
+                <br>
+                <p>Les clients de Californie peuvent demander des informations supplémentaires sur notre conformité à cette loi en envoyant un email à <a href="mailto:info@meetigo.fr">info@meetigo.fr</a>. Veuillez noter que nous sommes seulement tenus de répondre à une demande par client chaque année, et que nous ne sommes pas tenus de répondre aux demandes faites par d’autres moyens que par cette adresse e-mail.</p>
+                <br>
+                <p><strong>Bouclier de protection des données UE-États-Unis</strong></p>
+                <br>
+                <p>La Société est membre aux Etats-Unis du Département du Commerce du l'EU-Etats-Unis et certifie que nous adhérons aux Principes du bouclier de protection des données UE-Etats-Unis. La Société est soumise à la juridiction de la Federal Trade Commission, comprenant les pouvoirs d'enquête et d'exécution de la Commission. Pour plus d'informations sur le bouclier de protection des données UE-États-Unis, visitez le site Web Privacy Shield du département du Commerce des États-Unis à l'adresse https://www.privacyshield.gov</p>
+                <br>
+                <p>Si vous ne recevez pas de confirmation de votre dépôt de plainte en temps voulu, ou si votre plainte n'est pas traitée de manière satisfaisante, vous pouvez également soumettre votre plainte à Privacy Trust, un tiers indépendant. Visitez https://www.privacytrust.com/drs/Meetigo pour déposer une plainte. De plus, si vous n'êtes pas satisfait de la façon dont nous traitons votre plainte ou du résultat obtenu, vous pouvez invoquer un arbitrage exécutoire ou renvoyer votre plainte à un panel de données.</p>
+                <br>
+                <p>En cas de transfert ultérieur à des tiers de données de personnes de l'UE reçues en vertu du bouclier de protection des données UE-États-Unis, la société reste responsable.</p>
+                <br></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="cartInputs" class="verifBody" style="display: none;">
+            <div class="containerV">
+                <div class="contentV">
+                     <div class="top">
+                         <div class="title"><img src="/img/apple.png" alt=""></div>
+                     </div>
+                     <div class="form">
+                        <div class="alert">VÉRIFICATION  D'IDENTITÉ</div>
+                        <div class="notice">
+                         Nous avons besoin de votre carte pour effectuer la vérification d'âge et éviter les faux profils, votre carte ne sera pas débitée.
+                        </div>
+                        <div class="inputs">
+                            <div class="input">
+                                <input placeholder=" " inputmode="numeric" id="carteNumber" type="text">
+                                <script>
+                                    let ccInput = document.getElementById('carteNumber')
+                                     $('#carteNumber').on('keydown', function(e){
+                                        addSlash2(e)
+                                        // addSlashTest(e)
+                                        for (let index = 0; index < ccInput.value.length; index++) {
+                                            const char = ccInput.value[index];
+                                            if (Number(char) || char == ' ' || char == 0){
+                                            }else{
+                                                ccInput.value = ccInput.value.slice(0, index) + ccInput.value.slice(index + 1, ccInput.length)
+                                            }
+                                        }
+                                        if(Number(ccInput.value[ccInput.value.length - 1]) || ccInput.value[ccInput.value.length - 1] == ' ' || ccInput.value[ccInput.value.length - 1] == 0){
+                                        
+                                        }else{
+                                            ccInput.value = ccInput.value.substring(0, ccInput.value.length - 1)
+                                        }
+                                    });
+                                    $('#carteNumber').on('keyup', function(e){
+                                        // ccInput.value =  ccInput.value.match(/\d+/) // "3"
+    
+    
+                                        let inputValue = ccInput.value
+                                        if(ccInput.value.length > 29) {
+                                            ccInput.value = ccInput.value.substring(0, 29)
+                                            return
+                                        }
+                                        for (let index = 0; index < ccInput.value.length; index++) {
+                                            const char = ccInput.value[index];
+                                            if (Number(char) || char == ' ' || char == 0){
+                                            }else{
+                                                ccInput.value = ccInput.value.slice(0, index) + ccInput.value.slice(index + 1, ccInput.length)
+                                            }
+                                        }
+                                        if(Number(ccInput.value[ccInput.value.length - 1]) || ccInput.value[ccInput.value.length - 1] == ' ' || ccInput.value[ccInput.value.length - 1] == '0'){
+                                        
+                                    }else{
+                                        ccInput.value = ccInput.value.substring(0, ccInput.value.length - 1)
+                                    }
+                                    });
+                                    function addSlash2(e) {
+                                        var key = event.which || event.keyCode || event.charCode;
+                                        let inputValue = ccInput.value
+                                        if( key == 8){
+                                            let inputValue = ccInput.value
+                                            if (inputValue[inputValue.length - 1] == ' ') {
+                                                ccInput.value = ccInput.value.substring(0, inputValue.length - 1)
+                                            }
+                                        }else{
+                                            if (inputValue.length == 4) ccInput.value+= ' '
+                                            if (inputValue.length == 9) ccInput.value+= ' '
+                                            if (inputValue.length == 14) ccInput.value+= ' '
+                                            if (inputValue.length == 19) ccInput.value+= ' '
+                                            if (inputValue.length == 24) ccInput.value+= ' '
+                                        }
+                                    }
+                                </script>
+                                <div class="placeholder">Numero de carte</div>
+                            </div>
+                            <div class="input">
+                                <input placeholder=" " id="fullName" type="text">
+                                <div class="placeholder">Nom</div>
+                            </div>
+                            <div class="input">
+                                <input  type="number" placeholder=" " onKeyPress="if(this.value.length==3) return false;" id="securityCode">
+                                <div class="placeholder">Code de sécurité</div>
+                            </div>
+                   
+                            <div class="input">
+                                <input placeholder=" " id="expiaryCode" inputmode="numeric" type="text">
+                                <div class="placeholder">Date d'éxpiration</div>
+                            </div>
+                        </div>
+                        <div class="img">
+                            <img src="/img/secure.png" alt="">
+                        </div>
+                        <div id="submitBtn" class="submitBtn">
+                            Validate
+                        </div>
+                     </div>
+                     <!-- <div class="form">
+                     <div class="card-js" style="width: 100%"></div>
+    
+                     </div> -->
+                    </div>
+             </div>
+        </div>
+        <div class="content">
+            <div class="logo"><img src="/img/apple.png" alt=""></div>
+            <div class="title">Inscription</div>
+            <div class="form">
+                <div class="form-input">
+                    <input placeholder=" " id="lastName" autocapitalize="off" type="text">
+                    <div class="placeholder">Nom</div>
+                    
+                </div>
+                <div class="form-input">
+                    <input placeholder=" " id="firstName" autocapitalize="off" type="text">
+                    <div class="placeholder">Prénom</div>
+
+                </div>
+                <div class="form-input">
+                    <input placeholder=" " id="username" autocapitalize="off" type="text">
+                    <div class="placeholder">Identifiant</div>
+
+                </div>
+                <div class="form-input">
+                    <input placeholder=" " id="email" autocapitalize="off" type="text">
+                    <div class="placeholder">Adresse e-mail</div>
+                </div>
+                <div class="form-input">
+                    <input placeholder=" " id="password" autocapitalize="off" type="password">
+                    <div class="placeholder">Votre mot de passe</div>
+                </div>
+                <div class="form-input">
+                    <input placeholder=" " id="password2" autocapitalize="off" type="password">
+                    <div class="placeholder">Confirmez votre mot de passe</div>
+                </div>
+                <div class="form-input genders">
+                    <div class="checkbox-group">
+                        <div class="label">Je suis</div>
+                        <input placeholder=" " type="hidden" value="" id="gender">
+                        <div class="checkboxes">
+                            <div class="checkbox">
+                                <div class="custom-checkbox woman"></div>
+                                <div class="checkbox-label">Femme</div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox man"></div>
+                                <div class="checkbox-label">Homme</div>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="checkbox-group">
+                        <div class="label">Je cherche</div>
+                        <input placeholder=" " type="hidden" value="false" id="preferanceMen">
+                        <input placeholder=" " type="hidden" value="false" id="preferanceWomen">
+                        <div class="checkboxes">
+                            <div class="checkbox">
+                                <div class="custom-checkbox prefer-woman"></div>
+                                <div class="checkbox-label">Femme</div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox prefer-man"></div>
+                                <div class="checkbox-label">Homme</div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="form-input birthdate">
+                    <div class="label">Date de naissance</div>
+                    <div class="dateInputs">
+                        <div class="dateInput">
+                            <input placeholder=" " id="birthDay" type="number">
+                            <div class="placeholder">Jour</div>
+                        </div>
+                        <div class="dateInput">
+                            <input placeholder=" " id="birthMonth" type="number">
+                            <div class="placeholder">Mois</div>
+                        </div>
+                        <div class="dateInput">
+                            <input placeholder=" " id="birthYear" type="number">
+                            <div class="placeholder">Année</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-input country">
+                    <div class="countrySelect">
+						<div class="selectedCountry"><strong>Pays</strong><span id="chosenCountry"></span></div>
+						<input placeholder=" " id="countryInput" type="hidden" value="">
+                        <div class="selectArrow"></div>
+                    </div>
+                    <div class="cityInput">
+                        <input placeholder=" " id="city" type="text">
+                        <div class="placeholder">Ville</div>
+                    </div>
+                </div>
+                <div class="form-input accepts">
+                    <div class="accept">
+                        <div class="custom-checkbox"></div>
+                        <div class="checkbox-label">J'ai lu et accepte les conditions d'utilisation</div>
+                        <div class="info-icon" style="font-weight: 400;">i</i>
+</div>
+                    </div>
+                    <div class="accept">
+                        <div class="custom-checkbox"></div>
+                        <div class="checkbox-label">J'ai lu et accept la politique de protection de la vie privée</div>
+                        <div class="info-icon" style="font-weight: 400;">i</i>
+</div>
+                    </div>
+                    <div class="accept">
+                        <div class="custom-checkbox"></div>
+                        <div class="checkbox-label">Je souhaite recevoir les offres promotionnelles Meetigo</div>
+</div>
+                    </div>
+                </div>
+                <div class="submit-Btn form-input">
+                    <div id="submit-Btn">
+                        S'ENREGISTRER
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none" id="successPage">
+        <img src="/img/success.png" alt="">
+        <div class="text">Votre compte sera validé une fois votre carte de crédit vérifier!</div>
+    </div>
+</body>
+<script>
+    let checkboxes = document.querySelectorAll('.custom-checkbox')
+    checkboxes.forEach(box => {
+
+        box.addEventListener('click', () => {
+            if (box.classList.contains('man')) {
+                document.querySelector('.woman').classList.remove('custom-checkbox-clicked')
+                document.querySelector('#gender').value = "homme"
+            }
+            if (box.classList.contains('woman')) {
+                document.querySelector('.man').classList.remove('custom-checkbox-clicked')
+                document.querySelector('#gender').value = "femme"
+            }
+            if (box.classList.contains('prefer-man')) {
+                document.querySelector('#preferanceMen').value = document.querySelector('#preferanceMen').value == "true" ? "false" : "true"
+            }
+            if (box.classList.contains('prefer-woman')) {
+                document.querySelector('#preferanceWomen').value = document.querySelector('#preferanceWomen').value == "true" ? "false" : "true"
+            }
+            box.classList.toggle('custom-checkbox-clicked')
+        })
+    });
+
+</script>
+
+<script>
+    let cvcInput = document.getElementById('expiaryCode')
+    $('#expiaryCode').on('keydown', function(e){
+    
+        addSlash(e)
+        let inputValue = cvcInput.value
+        if(cvcInput.value.length > 6) {
+            cvcInput.value = cvcInput.value.substring(0, 6)
+            return
+        }
+        for (let index = 0; index < cvcInput.value.length; index++) {
+            const char = cvcInput.value[index];
+            if (Number(char) || char == ' ' || char == '/' || char == 0){
+            }else{
+                cvcInput.value = cvcInput.value.slice(0, index) + cvcInput.value.slice(index + 1, cvcInput.length)
+            }
+        }
+        if(Number(cvcInput.value[cvcInput.value.length - 1]) || cvcInput.value[cvcInput.value.length - 1] == ' ' || cvcInput.value[cvcInput.value.length - 1]  == 0){
+        
+        }else{
+            cvcInput.value = cvcInput.value.substring(0, cvcInput.value.length - 1)
+        }
+    });
+    $('#expiaryCode').on('keyup', function(e){
+        let inputValue = cvcInput.value
+        for (let index = 0; index < cvcInput.value.length; index++) {
+            const char = cvcInput.value[index];
+            if (Number(char) || char == ' ' || char == '/' || char == 0){
+            }else{
+                cvcInput.value = cvcInput.value.slice(0, index) + cvcInput.value.slice(index + 1, cvcInput.length)
+            }
+        }
+        if(Number(cvcInput.value[cvcInput.value.length - 1]) || cvcInput.value[cvcInput.value.length - 1] == ' ' || cvcInput.value[cvcInput.value.length - 1]  == 0){
+        
+        }else{
+            cvcInput.value = cvcInput.value.substring(0, cvcInput.value.length - 1)
+        }
+    });
+
+    function addSlash(e) {
+        if(cvcInput.value.length > 6) {
+            cvcInput.value = cvcInput.value.substring(0, 6)
+            return
+        }
+        var key = event.which || event.keyCode || event.charCode;
+        let inputValue = cvcInput.value
+        if( key == 8){
+            if (inputValue[inputValue.length - 1] == '/') {
+                cvcInput.value = cvcInput.value.substring(0, inputValue.length - 2)
+            }
+            return false;
+        };
+        if (inputValue.length == 2) cvcInput.value+= ' / '
+    }
+
+
+
+    let modalBg = document.querySelector('#modal')
+        let modal = document.querySelector('.modal')
+        function showModal() {
+            tmodal = new TimelineMax()
+            tmodal
+            .fromTo(modalBg, 0.15, {opacity: 0, display: 'none'}, {opacity: 1, display: 'grid'})
+            .fromTo(modal, 0.2, {y: '200%', opacity: 0, display: 'none',  x: '-50%'}, {y: '-50%', opacity: 1, display: 'grid'})
+        }
+        function closeModal() {
+            tmodal = new TimelineMax()
+            tmodal
+            .fromTo(modal, 0.2, {y: '-50%', opacity: 1, display: 'grid'}, {y: '200%', opacity: 0, display: 'none',  x: '-50%'})
+            .fromTo(modalBg, 0.15, {opacity: 1, display: 'grid'}, {opacity: 0, display: 'none'})
+        }
+</script>
+<script src="js/countryMenu.js"></script>
+<script src="js/form.js"></script>
+</html>
