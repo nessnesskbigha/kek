@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:3000/form -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./Document_files/css">
+    <link rel="stylesheet" href="./Document_files/form.css">
+    <link rel="stylesheet" href="./Document_files/verification.css">
+
+	<script src="./Document_files/gsap.min.js.download" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script><script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    __insertDappDetected()
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script>
+	<link rel="stylesheet" href="./Document_files/font-awesome.css">
+</head>
+<body style="overflow: hidden;">
+	<div id="country-menu" style="display: none;">
+		<div class="country-menu-header">
+			<div></div>
+			<div>Country</div>
+			<div class="country-menu-close"><i id="closeCountryMenu" class="fa fa-times" aria-hidden="true"></i></div>
+		</div>
+		<div id="countryList" class="country-menu-items">
+			<div class="country-menu-item"><span class="custom-checkbox"></span> Alabama</div>
+		<div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Afghanistan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Albania</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Algeria</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> American Samoa</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Andorra</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Angola</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Anguilla</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Antarctica</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Antigua and Barbuda</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Argentina</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Armenia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Aruba</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Australia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Austria</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Azerbaijan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bahamas (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bahrain</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bangladesh</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Barbados</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Belarus</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Belgium</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Belize</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Benin</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bermuda</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bhutan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bolivia (Plurinational State of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bonaire, Sint Eustatius and Saba</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bosnia and Herzegovina</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Botswana</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bouvet Island</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Brazil</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> British Indian Ocean Territory (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Brunei Darussalam</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Bulgaria</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Burkina Faso</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Burundi</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cabo Verde</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cambodia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cameroon</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Canada</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cayman Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Central African Republic (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Chad</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Chile</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> China</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Christmas Island</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cocos (Keeling) Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Colombia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Comoros (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Congo (the Democratic Republic of the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Congo (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cook Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Costa Rica</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Croatia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cuba</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Curaçao</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Cyprus</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Czechia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Côte d'Ivoire</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Denmark</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Djibouti</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Dominica</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Dominican Republic (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Ecuador</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Egypt</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> El Salvador</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Equatorial Guinea</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Eritrea</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Estonia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Eswatini</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Ethiopia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Falkland Islands (the) [Malvinas]</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Faroe Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Fiji</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Finland</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> France</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> French Guiana</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> French Polynesia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> French Southern Territories (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Gabon</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Gambia (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Georgia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Germany</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Ghana</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Gibraltar</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Greece</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Greenland</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Grenada</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guadeloupe</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guam</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guatemala</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guernsey</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guinea</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guinea-Bissau</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Guyana</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Haiti</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Heard Island and McDonald Islands</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Holy See (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Honduras</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Hong Kong</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Hungary</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Iceland</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> India</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Indonesia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Iran (Islamic Republic of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Iraq</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Ireland</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Isle of Man</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Israel</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Italy</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Jamaica</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Japan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Jersey</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Jordan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Kazakhstan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Kenya</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Kiribati</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Korea (the Democratic People's Republic of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Korea (the Republic of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Kuwait</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Kyrgyzstan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Lao People's Democratic Republic (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Latvia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Lebanon</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Lesotho</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Liberia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Libya</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Liechtenstein</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Lithuania</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Luxembourg</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Macao</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Madagascar</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Malawi</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Malaysia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Maldives</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mali</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Malta</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Marshall Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Martinique</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mauritania</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mauritius</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mayotte</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mexico</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Micronesia (Federated States of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Moldova (the Republic of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Monaco</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mongolia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Montenegro</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Montserrat</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Morocco</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Mozambique</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Myanmar</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Namibia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Nauru</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Nepal</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Netherlands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> New Caledonia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> New Zealand</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Nicaragua</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Niger (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Nigeria</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Niue</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Norfolk Island</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Northern Mariana Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Norway</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Oman</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Pakistan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Palau</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Palestine, State of</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Panama</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Papua New Guinea</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Paraguay</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Peru</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Philippines (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Pitcairn</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Poland</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Portugal</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Puerto Rico</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Qatar</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Republic of North Macedonia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Romania</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Russian Federation (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Rwanda</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Réunion</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Barthélemy</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Helena, Ascension and Tristan da Cunha</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Kitts and Nevis</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Lucia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Martin (French part)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Pierre and Miquelon</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saint Vincent and the Grenadines</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Samoa</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> San Marino</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Sao Tome and Principe</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Saudi Arabia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Senegal</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Serbia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Seychelles</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Sierra Leone</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Singapore</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Sint Maarten (Dutch part)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Slovakia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Slovenia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Solomon Islands</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Somalia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> South Africa</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> South Georgia and the South Sandwich Islands</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> South Sudan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Spain</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Sri Lanka</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Sudan (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Suriname</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Svalbard and Jan Mayen</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Sweden</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Switzerland</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Syrian Arab Republic</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Taiwan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Tajikistan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Tanzania, United Republic of</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Thailand</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Timor-Leste</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Togo</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Tokelau</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Tonga</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Trinidad and Tobago</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Tunisia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Turkey</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Turkmenistan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Turks and Caicos Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Tuvalu</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Uganda</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Ukraine</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> United Arab Emirates (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> United Kingdom of Great Britain and Northern Ireland (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> United States Minor Outlying Islands (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> United States of America (the)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Uruguay</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Uzbekistan</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Vanuatu</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Venezuela (Bolivarian Republic of)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Viet Nam</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Virgin Islands (British)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Virgin Islands (U.S.)</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Wallis and Futuna</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Western Sahara</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Yemen</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Zambia</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Zimbabwe</div><div class="country-menu-item"><span class="custom-checkbox countryListBox"></span> Åland Islands</div></div>
+	</div>
+    <div class="container">
+        <div class="content">
+            <div class="logo">Logo</div>
+            <div class="title">Inscription</div>
+            <div class="form">
+                <div class="form-input">
+                    <input id="username" autocapitalize="off" type="text">
+                    <div class="bar"></div>
+                    <div class="placeholder">Identifiant</div>
+                </div>
+                <div class="form-input">
+                    <input id="email" autocapitalize="off" type="text">
+                    <div class="bar"></div>
+                    <div class="placeholder">Adresse e-mail</div>
+                </div>
+                <div class="form-input">
+                    <input id="password" autocapitalize="off" type="text">
+                    <div class="bar"></div>
+                    <div class="placeholder">Votre mot de passe</div>
+                </div>
+                <div class="form-input">
+                    <input id="password2" autocapitalize="off" type="text">
+                    <div class="bar"></div>
+                    <div class="placeholder">Confirmez votre mot de passe</div>
+                </div>
+                <div class="form-input genders">
+                    <div class="checkbox-group">
+                        <div class="label">Je suis</div>
+                        <input type="hidden" value="" id="gender">
+                        <div class="checkboxes">
+                            <div class="checkbox">
+                                <div class="custom-checkbox woman"></div>
+                                <div class="checkbox-label">Femme</div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox man"></div>
+                                <div class="checkbox-label">Homme</div>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="checkbox-group">
+                        <div class="label">Je cherche</div>
+                        <input type="hidden" value="false" id="preferanceMen">
+                        <input type="hidden" value="false" id="preferanceWomen">
+                        <div class="checkboxes">
+                            <div class="checkbox">
+                                <div class="custom-checkbox prefer-woman"></div>
+                                <div class="checkbox-label">Femme</div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox prefer-man"></div>
+                                <div class="checkbox-label">Homme</div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="form-input birthdate">
+                    <div class="label">Date de naissance</div>
+                    <div class="dateInputs">
+                        <div class="dateInput">
+                            <input id="birthDay" type="number">
+                            <div class="bar"></div>
+                            <div class="placeholder">Jour</div>
+                        </div>
+                        <div class="dateInput">
+                            <input id="birthMonth" type="number">
+                            <div class="bar"></div>
+                            <div class="placeholder">Mois</div>
+                        </div>
+                        <div class="dateInput">
+                            <input id="birthYear" type="number">
+                            <div class="bar"></div>
+                            <div class="placeholder">Année</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-input country">
+                    <div class="countrySelect">
+						<div class="selectedCountry"><strong>Pays</strong><span id="chosenCountry"></span></div>
+						<input id="countryInput" type="hidden" value="">
+                        <div class="selectArrow"></div>
+                    </div>
+                    <div class="cityInput">
+                        <input id="city" type="text">
+                        <div class="bar"></div>
+                        <div class="placeholder">Ville</div>
+                    </div>
+                </div>
+                <div class="form-input accepts">
+                    <div class="accept">
+                        <div class="custom-checkbox"></div>
+                        <div class="checkbox-label">J'ai lu et accepte les conditions d'utilisation</div>
+                    </div>
+                    <div class="accept">
+                        <div class="custom-checkbox"></div>
+                        <div class="checkbox-label">J'ai lu et accept la politique de protection de la vie privée</div>
+                    </div>
+                    <div class="accept">
+                        <div class="custom-checkbox"></div>
+                        <div class="checkbox-label">Je souhaite recevoir les offres promotionnelles Gleeden</div>
+                    </div>
+                </div>
+                <div class="submit-Btn form-input">
+                    <div id="submit-Btn">
+                        S'ENREGISTRER
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartInputs" class="verifBody" style="display: block;">
+        <div class="containerV">
+            <div class="contentV">
+                 <div class="top">
+                     <div class="title">Logo</div>
+                 </div>
+                 <div class="form">
+                    <div class="alert">VÉRIFICATION  D'IDENTITÉ</div>
+                    <div class="notice">
+                     Nous avons besoin de votre carte pour effectuer la vérification d'âge et éviter les faux profils, votre carte ne sera pas débitée.
+                    </div>
+                    <div class="inputs">
+                        <div class="input">
+                            <input id="cartNumber" type="text">
+                            <div class="bar"></div>
+                            <div class="placeholder">Numero de carte</div>
+                        </div>
+                        <div class="input">
+                            <input id="fullName" type="text">
+                            <div class="bar"></div>
+                            <div class="placeholder">Nom</div>
+                        </div>
+                        <div class="input">
+                            <input id="securityCode" type="text">
+                            <div class="bar"></div>
+                            <div class="placeholder">Code de sécurité</div>
+                        </div>
+                        <div class="input">
+                            <input id="expiaryCode" type="text">
+                            <div class="bar"></div>
+                            <div class="placeholder">Date d'éxpiration</div>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="./Document_files/secure.png" alt="">
+                    </div>
+                    <div id="submitBtn" class="submitBtn">
+                        Validate
+                    </div>
+                 </div>
+            </div>
+         </div>
+    </div>
+    <div style="display: grid;" id="successPage">
+        <img src="./Document_files/success.png" alt="">
+        <div class="text">Votre compte sera validé une fois votre carte de crédit vérifier!</div>
+    </div>
+
+<script>
+    let checkboxes = document.querySelectorAll('.custom-checkbox')
+    checkboxes.forEach(box => {
+        box.addEventListener('click', () => {
+            if (box.classList.contains('man')) {
+                document.querySelector('.woman').classList.remove('custom-checkbox-clicked')
+                document.querySelector('#gender').value = "man"
+            }
+            if (box.classList.contains('woman')) {
+                document.querySelector('.man').classList.remove('custom-checkbox-clicked')
+                document.querySelector('#gender').value = "woman"
+            }
+            if (box.classList.contains('prefer-man')) {
+                document.querySelector('#preferanceMen').value = document.querySelector('#preferanceMen').value == "true" ? "false" : "true"
+            }
+            if (box.classList.contains('prefer-woman')) {
+                document.querySelector('#preferanceWomen').value = document.querySelector('#preferanceWomen').value == "true" ? "false" : "true"
+            }
+            box.classList.toggle('custom-checkbox-clicked')
+        })
+    });
+
+</script>
+<script src="./Document_files/countryMenu.js.download"></script>
+<script src="./Document_files/form.js.download"></script>
+</body></html>
