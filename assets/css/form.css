@@ -1,0 +1,506 @@
+* {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .content {
+  width: 100%;
+  height: 100%;
+}
+
+.container .content .logo {
+  margin: 30px auto;
+  text-align: center;
+  font-size: 50px;
+}
+
+.container .content .logo img {
+  height: 100px;
+}
+
+.container .content .title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.container .content .form {
+  background-color: #f3f3f3;
+}
+
+.container .content .form .form-input {
+  max-width: 100%;
+  padding: 0 25px;
+  background: white;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.container .content .form .form-input .placeholder {
+  position: absolute;
+  pointer-events: none;
+  left: 25px;
+  margin: auto;
+  height: 15px;
+  font-size: 13px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 200ms ease-in-out all;
+  transition: 200ms ease-in-out all;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.container .content .form .form-input input[type="text"], .container .content .form .form-input input[type="number"], .container .content .form .form-input input[type="password"] {
+  height: 66px;
+  width: 100%;
+  border: none;
+}
+
+.container .content .form .form-input input[type="text"] ~ .bar, .container .content .form .form-input input[type="number"] ~ .bar, .container .content .form .form-input input[type="password"] ~ .bar {
+  width: 100%;
+}
+
+.container .content .form .form-input input[type="text"]:focus, .container .content .form .form-input input[type="number"]:focus, .container .content .form .form-input input[type="password"]:focus {
+  outline: none;
+  background: white;
+}
+
+.container .content .form .form-input input[type="text"] ~ .placeholder, .container .content .form .form-input input[type="number"] ~ .placeholder, .container .content .form .form-input input[type="password"] ~ .placeholder {
+  top: 15px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.container .content .form .form-input input[type="text"]:placeholder-shown, .container .content .form .form-input input[type="password"]:placeholder-shown, .container .content .form .form-input input[type="number"]:placeholder-shown {
+  height: 66px;
+  width: 100%;
+  border: none;
+}
+
+.container .content .form .form-input input[type="text"]:placeholder-shown ~ .bar, .container .content .form .form-input input[type="password"]:placeholder-shown ~ .bar, .container .content .form .form-input input[type="number"]:placeholder-shown ~ .bar {
+  width: 0%;
+}
+
+.container .content .form .form-input input[type="text"]:placeholder-shown ~ .placeholder, .container .content .form .form-input input[type="password"]:placeholder-shown ~ .placeholder, .container .content .form .form-input input[type="number"]:placeholder-shown ~ .placeholder {
+  top: 50%;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.container .content .form .form-input input[type="text"]:placeholder-shown:focus, .container .content .form .form-input input[type="password"]:placeholder-shown:focus, .container .content .form .form-input input[type="number"]:placeholder-shown:focus {
+  outline: none;
+}
+
+.container .content .form .form-input input[type="text"]:placeholder-shown:focus ~ .placeholder, .container .content .form .form-input input[type="password"]:placeholder-shown:focus ~ .placeholder, .container .content .form .form-input input[type="number"]:placeholder-shown:focus ~ .placeholder {
+  display: inline !important;
+  top: 15px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.container .content .form .form-input input[type="text"]:placeholder-shown:focus ~ .bar, .container .content .form .form-input input[type="password"]:placeholder-shown:focus ~ .bar, .container .content .form .form-input input[type="number"]:placeholder-shown:focus ~ .bar {
+  width: 100%;
+}
+
+.container .content .form .form-input .bar {
+  background: #3c263d;
+  width: 0;
+  height: 0.5px;
+  margin: auto;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-transition: 200ms ease-in-out all;
+  transition: 200ms ease-in-out all;
+}
+
+.container .content .form .genders {
+  margin-top: 10px;
+  background-color: #f3f3f3;
+  padding: 0 !important;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.container .content .form .checkbox-group {
+  background-color: white;
+  max-width: 100%;
+  padding: 0 25px;
+  height: 100px;
+  margin-bottom: 1px;
+}
+
+.container .content .form .label {
+  text-align: center;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .content .form .checkboxes {
+  background-color: white;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .content .form .checkboxes .checkbox {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .content .form .birthdate {
+  padding-top: 8px;
+}
+
+.container .content .form .birthdate .dateInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 100%;
+}
+
+.container .content .form .birthdate .dateInputs .dateInput {
+  width: 30%;
+  position: relative;
+}
+
+.container .content .form .birthdate .dateInputs .dateInput .placeholder {
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.container .content .form .birthdate .dateInputs .dateInput:focus ~ .placeholder {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+}
+
+.container .content .form .country {
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+.container .content .form .country .countrySelect {
+  background-color: white;
+  padding: 0 25px;
+  height: 66px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2px;
+}
+
+.container .content .form .country .countrySelect .selectArrow {
+  width: 10px;
+  height: 10px;
+  border: 3px black solid;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.container .content .form .country .cityInput {
+  height: 66px;
+  background-color: white;
+  position: relative;
+  padding: 0 25px;
+}
+
+.container .content .accepts {
+  padding: 0 !important;
+  background-color: #f3f3f3 !important;
+  display: -ms-grid;
+  display: grid;
+}
+
+.container .content .accepts .accept {
+  padding: 0 25px;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 66px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35px 1fr 25px;
+      grid-template-columns: 35px 1fr 25px;
+  margin-bottom: 2px !important;
+}
+
+.container .content .accepts .accept .custom-checkbox {
+  margin: auto 0;
+}
+
+.container .content .accepts .accept .custom-label {
+  float: right;
+  width: 80%;
+}
+
+.container .content .accepts .accept .info-icon {
+  height: 12px;
+  width: 12px;
+  font-size: 12px;
+  padding: 2px;
+  border-radius: 50px;
+  border: black 1px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+.container .content .submit-Btn {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .content .submit-Btn #submit-Btn {
+  padding: 12px 90px;
+  color: white;
+  font-size: 13px;
+  border-radius: 2px;
+  background: #b83151;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  display: block;
+  background: #f3f3f3;
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+  content: "";
+  z-index: 2;
+  margin-right: 12px;
+  position: relative;
+}
+
+.custom-checkbox-clicked {
+  background: #3c263d !important;
+}
+
+.custom-checkbox-clicked:after {
+  width: 12px;
+  height: 8px;
+  border: 2px white solid;
+  border-top: 0;
+  border-right: 0;
+  content: " ";
+  position: absolute;
+  top: 42%;
+  left: 45%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  background: white;
+}
+
+.overlay-menu .overlay-menu-header {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #3c263d;
+  height: 8vh;
+  padding: 0 25px;
+}
+
+.overlay-menu .overlay-menu-header .overlay-menu-close {
+  font-size: 25px;
+}
+
+.overlay-menu .overlay-menu-items {
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow: overlay;
+}
+
+.overlay-menu .overlay-menu-item {
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+  padding-left: 25px;
+  font-size: 13px;
+}
+
+input:-internal-autofill-selected {
+  background-color: white !important;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+#modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 420;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 999;
+}
+
+#modal .modal {
+  height: 215px;
+  width: 300px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.9fr 1.3fr 1fr;
+      grid-template-rows: 0.9fr 1.3fr 1fr;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 2px black inset, 0px 0px 3px black;
+          box-shadow: 0px 0px 2px black inset, 0px 0px 3px black;
+}
+
+#modal .modal > div {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#modal .modal .modal-content {
+  text-align: center;
+}
+
+#modal .modal .modal-title, #modal .modal .modal-btn {
+  background: #b83151;
+  color: white;
+}
+
+#modal .modal .modal-content {
+  font-size: 14px;
+}
+
+#modal .modal .modal-content p {
+  max-width: 80%;
+  margin: auto;
+}
+
+#modal .modal .modal-btn {
+  width: 95%;
+  height: 75%;
+  border-radius: 2px;
+  margin: auto;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/*# sourceMappingURL=form.css.map */

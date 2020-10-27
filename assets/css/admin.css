@@ -1,0 +1,69 @@
+* {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3c263d;
+  color: white;
+}
+
+#container {
+  width: 95vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+#container .content {
+  margin: 25px;
+}
+
+#container .content .users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#container .content .users .user {
+  background: white;
+  margin: 5px;
+  padding: 10px;
+  color: black;
+  width: 200px;
+  position: relative;
+}
+
+#container .content .users .user .label {
+  font-weight: 500;
+}
+
+#container .content .users .user .userDeleteBtn {
+  height: 15px;
+  width: 15px;
+  padding: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  color: white;
+  background: #9b0909;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 2px;
+}
+/*# sourceMappingURL=admin.css.map */

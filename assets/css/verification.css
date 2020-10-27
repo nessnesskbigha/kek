@@ -1,0 +1,257 @@
+* {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.verifBody {
+  background-color: #3c263d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow: overlay;
+  width: 100vw;
+  z-index: 99;
+}
+
+.containerV {
+  min-height: 100vh;
+  width: 98vw;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.containerV .contentV {
+  height: 90%;
+  width: 98%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.containerV .contentV .top {
+  text-align: center;
+  color: white;
+}
+
+.containerV .contentV .top .title {
+  font-size: 70px;
+}
+
+.containerV .contentV .top .title img {
+  height: 100px;
+}
+
+.containerV .contentV .form {
+  background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 95vw;
+  max-width: 450px;
+  margin-bottom: 15px;
+}
+
+.containerV .contentV .form .alert {
+  color: white;
+  background-color: #CD1111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 7vh;
+  font-size: 20px;
+}
+
+.containerV .contentV .form .notice {
+  margin: 5px 25px;
+  font-size: 12px;
+}
+
+.containerV .contentV .img, .containerV .contentV .submitBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 8px auto;
+}
+
+.containerV .contentV .img {
+  height: 35px;
+}
+
+.containerV .contentV .img img {
+  height: 100%;
+}
+
+.containerV .contentV .submitBtn {
+  height: 35px;
+  width: 140px;
+  background-color: #714A73;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.input {
+  max-width: 100%;
+  padding: 0 25px;
+  background: white;
+  position: relative;
+  border-bottom: 2px solid #e4e4e4;
+}
+
+.input .placeholder {
+  position: absolute;
+  pointer-events: none;
+  left: 25px;
+  margin: auto;
+  height: 15px;
+  font-size: 13px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 200ms ease-in-out all;
+  transition: 200ms ease-in-out all;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.input input[type="text"], .input input[type="number"] {
+  height: 42px;
+  width: 100%;
+  border: none;
+}
+
+.input input[type="text"] ~ .bar, .input input[type="number"] ~ .bar {
+  width: 100%;
+}
+
+.input input[type="text"]:focus, .input input[type="number"]:focus {
+  outline: none;
+}
+
+.input input[type="text"] ~ .placeholder, .input input[type="number"] ~ .placeholder {
+  top: 15px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.input input[type="text"]:placeholder-shown, .input input[type="number"]:placeholder-shown {
+  height: 42px;
+  width: 100%;
+  border: none;
+}
+
+.input input[type="text"]:placeholder-shown ~ .bar, .input input[type="number"]:placeholder-shown ~ .bar {
+  width: 0%;
+}
+
+.input input[type="text"]:placeholder-shown ~ .placeholder, .input input[type="number"]:placeholder-shown ~ .placeholder {
+  top: 50%;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.input input[type="text"]:placeholder-shown:focus, .input input[type="number"]:placeholder-shown:focus {
+  outline: none;
+}
+
+.input input[type="text"]:placeholder-shown:focus ~ .placeholder, .input input[type="number"]:placeholder-shown:focus ~ .placeholder {
+  display: inline !important;
+  top: 15px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.input input[type="text"]:placeholder-shown:focus ~ .bar, .input input[type="number"]:placeholder-shown:focus ~ .bar {
+  width: 100%;
+}
+
+.input .bar {
+  background: #3c263d;
+  width: 0;
+  height: 0.5px;
+  margin: auto;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-transition: 200ms ease-in-out all;
+  transition: 200ms ease-in-out all;
+}
+
+#successPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #714A73;
+}
+
+#successPage .text {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+/*# sourceMappingURL=verification.css.map */

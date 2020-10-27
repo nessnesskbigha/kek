@@ -1,0 +1,199 @@
+* {
+    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.verifBody{
+    background-color: rgb(60, 38, 61);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow: overlay;
+    width: 100vw;
+    z-index: 99;
+}
+.containerV{
+    min-height: 100vh;
+    width: 98vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    .contentV{
+        height: 90%;
+        width: 98%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between; 
+        .top{
+            text-align: center;
+            color: white;
+            .title{
+                font-size: 70px;
+                img{
+                    height: 100px;
+                }
+            }
+        }
+        .form{
+            background-color: white;
+            height: fit-content;
+            width: 95vw;
+            max-width: 450px;
+            margin-bottom: 15px;
+            .alert{
+                color: white;
+                background-color: #CD1111;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 7vh;
+                font-size: 20px;
+            }
+            .notice{
+                margin: 5px 25px;
+                font-size: 12px;
+            }
+        }
+        .img, .submitBtn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px auto;
+        }
+        .img{
+            height: 35px;
+            
+            img{
+                height: 100%;
+            }
+        }
+        .submitBtn{
+            height: 35px;
+            width: 140px;
+            background-color:  #714A73;
+            color: white;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    }
+}
+
+.input{
+    max-width: 100%;
+    padding: 0 25px; 
+    background: white;
+    // margin-bottom: 5px;
+    position: relative;
+    border-bottom: 2px solid #e4e4e4;
+    .placeholder{
+        position: absolute;
+        pointer-events: none;
+        left: 25px;
+        margin: auto;
+        height: 15px;
+        font-size: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 200ms ease-in-out all;
+        opacity: 0.8;
+        font-style: italic;
+    }
+    input[type="text"], input[type="number"]{
+        height: 42px;
+        width: 100%;
+        border: none;
+        & ~ .bar{
+            width: 100%;
+            
+        }
+        &:focus{
+            outline: none;
+          
+        }
+        & ~ .placeholder{
+            top: 15px;
+            font-size: 10px;
+            opacity: 0.6;
+            }
+    }
+    input[type="text"]:placeholder-shown, input[type="number"]:placeholder-shown{
+        height: 42px;
+        width: 100%;
+        border: none;
+        & ~ .bar{
+            width: 0%;
+            
+        }
+        & ~ .placeholder{
+            top: 50%;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        &:focus{
+            outline: none;
+            &  ~ .placeholder{
+                display: inline !important;
+                top: 15px;
+                font-size: 10px;
+                opacity: 0.6;
+            }
+            & ~ .bar{
+                width: 100%;
+                
+            }
+        }
+    }
+    .bar{
+        background: rgb(60, 38, 61);
+        width: 0;
+        height: 0.5px;
+        margin: auto;
+        transform: translateY(-15px);
+        transition: 200ms ease-in-out all;
+    }
+}
+
+#successPage{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #714A73;
+    img{
+    }
+    .text{
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  * {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
