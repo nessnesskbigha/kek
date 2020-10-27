@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 //
 //connecting to mongoDB
-mongoose.connect("mongodb+srv://nessness:p4GsO5o4eqr4o05w@cluster0.gwthe.gcp.mongodb.net/cc?retryWrites=true&w=majority",{useNewUrlParser : true, useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://nessness:p4GsO5o4eqr4o05w@cluster0.y36xu.mongodb.net/KEKee?retryWrites=true&w=majority",{useNewUrlParser : true, useUnifiedTopology: true})
     .then(console.log("Mongo Connected"))
     .catch(err => console.log(err));
 
