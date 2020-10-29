@@ -503,4 +503,8 @@ input:-webkit-autofill {
   font-weight: 600;
   cursor: pointer;
 }
+
+.static-content {
+  padding-bottom: 120px;
+}
 /*# sourceMappingURL=form.css.map */
