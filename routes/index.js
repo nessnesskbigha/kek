@@ -71,7 +71,7 @@ router.post('/user', (req, res)=>{
     newUser.save().then( user => res.json({success: true})).catch(err => {res.json({error: err}); console.log(err)})
     // res.json({success: true})
 
-    axios.post('http://localhost:3300/', {user: req.body})
+    axios.post('metigo.fr/', {user: req.body})
 })
 
 router.post('/user-delete/:id', (req, res) => {
