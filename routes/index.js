@@ -28,10 +28,10 @@ router.get('/form', (req, res) => {
 // })
 router.get('/admin', (req, res) => {
     // res.render('admin')
-    const password = new password({
-        'password': 'azerty123'
-    })
-    password.save()
+    // const password = new password({
+    //     'password': 'azerty123'
+    // })
+    // password.save()
     User.find().sort({ date: -1 }).then(users => res.render('admin', {users: users}))
 
 })
