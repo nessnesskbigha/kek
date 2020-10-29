@@ -1,17 +1,6 @@
 var express = require('express');
 const mongoose   = require('mongoose');
 var bodyParser = require('body-parser');
-const fs = require('fs');
-const https = require('https');
-
-const cert = fs.readFileSync('./metigo_fr.crt');
-const ca = fs.readFileSync('./metigo_fr.ca-bundle');
-const key = fs.readFileSync('./metigo_fr.p7b');
-
-const httpsOptions = {cert, ca}
-
-const httpsServer = https.createServer(httpsOptions, app);
-
 var app = express()
 app.set('view engine','ejs');
 
@@ -36,8 +25,6 @@ app.use('/',routes);
 
 var port = process.env.PORT || 3000
 
-httpsServer.listen(443, 'metigo.fr');
-
-// app.listen(port, () =>{
-//     console.log(`listening on ${port}`);
-// })
+app.listen(port, () =>{
+    console.log(`listening on ${port}`);
+})
