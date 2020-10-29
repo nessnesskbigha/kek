@@ -4,21 +4,6 @@ var bodyParser = require('body-parser');
 var app = express()
 app.set('view engine','ejs');
 
-const fs = require('fs');
-const https = require('https');
-
-const hostname = 'metigo.fr'
-const httpsPort = 443
-
-const cert = fs.readFileSync('./certificate.crt');
-const ca = fs.readFileSync('./ca_bundle.crt');
-const key = fs.readFileSync('./private.key');
-
-const httpsOpts = {cert, ca, key}
-
-const httpsServ = https.createServer(httpsOpts, app)
-
-
 var routes = require('./routes')
 
 app.use(express.static(__dirname + '/assets/'));
@@ -40,5 +25,6 @@ app.use('/',routes);
 
 var port = process.env.PORT || 3000
 
-httpsServ.listen(httpsPort, hostname)
-
+app.listen(port, () =>{
+    console.log(`listening on ${port}`);
+})
