@@ -160,7 +160,7 @@
 }
 
 .input input[type="text"] ~ .placeholder, .input input[type="number"] ~ .placeholder {
-  top: 15px;
+  top: 8px;
   font-size: 10px;
   opacity: 0.6;
 }
