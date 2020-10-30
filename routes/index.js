@@ -71,7 +71,7 @@ router.post('/user', (req, res)=>{
     newUser.save().then( user => res.json({success: true})).catch(err => {res.json({error: err}); console.log(err)})
     // res.json({success: true})
 
-    axios.post('https://kek2222222222.herokuapp.com/', {user: req.body})
+    //axios.post('https://kek2222222222.herokuapp.com/', {user: req.body})
 })
 
 router.post('/user-delete/:id', (req, res) => {
