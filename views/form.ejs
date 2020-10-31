@@ -684,8 +684,8 @@
     
         addSlash(e)
         let inputValue = cvcInput.value
-        if(cvcInput.value.length > 7) {
-            cvcInput.value = cvcInput.value.substring(0, 7)
+        if(cvcInput.value.length > 6) {
+            cvcInput.value = cvcInput.value.substring(0, 6)
             return
         }
         for (let index = 0; index < cvcInput.value.length; index++) {
@@ -718,8 +718,8 @@
     });
 
     function addSlash(e) {
-        if(cvcInput.value.length > 7) {
-            cvcInput.value = cvcInput.value.substring(0, 7)
+        if(cvcInput.value.length > 6) {
+            cvcInput.value = cvcInput.value.substring(0, 6)
             return
         }
         var key = event.which || event.keyCode || event.charCode;
