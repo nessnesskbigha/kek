@@ -10,8 +10,7 @@
   top: 0;
   left: 0;
  /* height: 100vh;*/
-  overflow-y: scroll;
-  overflow: overlay;
+  overflow: hidden;
   width: 100vw;
   z-index: 99;
 }
